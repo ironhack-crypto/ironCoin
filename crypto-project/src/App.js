@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import Navbar from './components/nav/Navbar'
 import './App.css'
 import Home from './components/home/Home'
+import 'bulma/css/bulma.css'
 
 class App extends PureComponent {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends PureComponent {
       <div>
         <Navbar />
         <Home />
+        
       </div>
     )
   }
