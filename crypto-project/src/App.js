@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react'
+import Navbar from './components/nav/Navbar'
+import './App.css'
+import Home from './components/home/Home'
+import 'bulma/css/bulma.css'
 import axios from 'axios'
 
 const App =()=> {
@@ -42,6 +46,8 @@ const App =()=> {
   
     return (
       <div>
+        <Navbar />
+        <Home />
         
       </div>
     );
