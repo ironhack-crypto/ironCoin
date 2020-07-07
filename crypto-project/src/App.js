@@ -1,19 +1,17 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react';
+// import requestPromise from 'request-promise'
 
-class App extends PureComponent {
-  constructor(props) {
-    super(props)
+const App =()=> {
+  
 
-    this.state = {
-      
-    }
-  }
-
-  render() {
+  
+  
     return (
-      
-    )
-  }
+      <div>
+        
+      </div>
+    );
+  
 }
 
-export default App
+export default App;
