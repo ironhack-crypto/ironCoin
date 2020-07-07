@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react'
+import Navbar from './components/nav/Navbar'
+import './App.css'
+import Home from './components/home/Home'
 
 class App extends PureComponent {
   constructor(props) {
@@ -11,7 +14,10 @@ class App extends PureComponent {
 
   render() {
     return (
-      
+      <div>
+        <Navbar />
+        <Home />
+      </div>
     )
   }
 }
