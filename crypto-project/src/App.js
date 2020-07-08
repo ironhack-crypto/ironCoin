@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react'
-import Navbar from './components/nav/Navbar'
+import { Link, Switch, Route } from 'react-router-dom';
 import './App.css'
-import Home from './components/home/Home'
 import 'bulma/css/bulma.css'
+// import Navbar from './components/nav/Navbar'
+import Home from './components/home/Home'
+import CoinPage from './components/coinPage/CoinPage.js'
 import axios from 'axios'
 
 const App =()=> {
@@ -23,10 +25,12 @@ const App =()=> {
   
   
     return (
-      <div>
-        <Navbar />
-        <Home />
-        
+      <div >
+        {/* No Renders in App.js. Routes only */}
+        <Switch>
+          <Route exact path="/" render={(props)=><Home {...props}/>} />
+          <Route path="/coin" render={CoinPage} />
+        </Switch>
       </div>
     );
   

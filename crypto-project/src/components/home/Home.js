@@ -1,5 +1,8 @@
 import React from 'react'
 import homeImg from './homeImg.png'
+import { Link } from 'react-router-dom';
+import Navbar from './../nav/Navbar.js'
+
 
 const Home = () => {
     const heroImg={
@@ -10,9 +13,10 @@ const Home = () => {
 
     return (
         <div>
+            
             <div style={heroImg}>
             </div>
-           <h1>All of our Graphs and stuff can go here</h1>
+            <Link to="/coin">Go to coin</Link>
         </div>
     )
 }
