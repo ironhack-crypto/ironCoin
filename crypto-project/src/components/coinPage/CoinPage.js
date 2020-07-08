@@ -6,18 +6,22 @@ const CoinPage =(props)=> {
 
 
     const displayInfo =()=>{
-        let c=props.coins[0];
+        // let c=props.coins[0];
         // let lastUpdate=new Date(c.last_updated)
-        return <div>
-            <h1>{c.name}</h1>
-            <h3>Price: <span>${c.quote.USD.price.toFixed(2)}</span></h3>
-            <h3>Last Updated: <span>{c.last_updated}</span></h3>
-            <h3>Circulating Supply: <span>{c.circulating_supply}</span></h3>
-            <h3>Total Supply: <span>{c.total_supply}</span></h3>
-            <h3>Max Supply: <span>{c.max_supply}</span></h3>
-            <h1>{c.symbol}</h1>
-        </div>
-    }
+        return props.coins.map((eachBeer)=>{
+            return (
+                <div style={{marginBottom: '15px'}}>
+                    <h1>{eachBeer.name}</h1>
+                    <h3>Price: <span>${eachBeer.quote.USD.price.toFixed(2)}</span></h3>
+                    <h3>Last Updated: <span>{eachBeer.last_updated}</span></h3>
+                    <h3>Circulating Supply: <span>{eachBeer.circulating_supply}</span></h3>
+                    <h3>Total Supply: <span>{eachBeer.total_supply}</span></h3>
+                    <h3>Max Supply: <span>{eachBeer.max_supply}</span></h3>
+                    <h1>{eachBeer.symbol}</h1>
+                </div>                
+            )
+        })
+    }//end display
 
 
     const coinBanner =()=>{

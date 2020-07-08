@@ -13,7 +13,7 @@ const Home = () => {
 
     return (
         <div>
-            
+            <Navbar />
             <div style={heroImg}>
             </div>
             <Link to="/coin">Go to coin</Link>
