@@ -10,7 +10,7 @@ const CoinPage =(props)=> {
         // let lastUpdate=new Date(c.last_updated)
         return props.coins.map((eachBeer)=>{
             return (
-                <div style={{marginBottom: '15px'}}>
+                <div style={{marginBottom: '15px'}} kay={eachBeer.id}>
                     <h1>{eachBeer.name}</h1>
                     <h3>Price: <span>${eachBeer.quote.USD.price.toFixed(2)}</span></h3>
                     <h3>Last Updated: <span>{eachBeer.last_updated}</span></h3>
