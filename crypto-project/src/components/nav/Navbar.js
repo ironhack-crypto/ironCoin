@@ -4,7 +4,7 @@ import './Navbar.css'
 const Navbar = () => {
     return (
         <nav>
-            <h1>Iron Coin</h1>
+            <h1>Nav Placeholder (potentially slide menu to fill the empty purple space?)</h1>
         </nav>
     )
 }
