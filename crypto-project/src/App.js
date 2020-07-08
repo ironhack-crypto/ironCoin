@@ -5,6 +5,7 @@ import 'bulma/css/bulma.css'
 // import Navbar from './components/nav/Navbar'
 import Home from './components/home/Home'
 import CoinPage from './components/coinPage/CoinPage.js'
+import Ticker from './components/Ticker'
 import axios from 'axios'
 
 class App extends Component{
@@ -38,8 +39,10 @@ class App extends Component{
         {/* No Renders in App.js. Routes only */}
         <Switch>
           <Route exact path="/" render={(props)=><Home {...props}/>} />
+          <Route exact path="/ticker" render={(props)=><Ticker coins={this.state.coins}/>} />
           <Route path="/coin" render={(props)=><CoinPage coins={this.state.coins} {...props}/>}/>
         </Switch>
+        
       </div>
     );
   }

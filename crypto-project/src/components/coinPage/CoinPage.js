@@ -4,10 +4,14 @@ import Navbar from './../nav/Navbar'
 
 const CoinPage =(props)=> {
 
+    const tickStyle={
+        width:'20%',
+        marginBottom: '15px',
+        right: '5px'
+    }
 
     const displayInfo =()=>{
-        // let c=props.coins[0];
-        // let lastUpdate=new Date(c.last_updated)
+
         return props.coins.map((eachCoin)=>{
             return (
                 <div style={{marginBottom: '15px'}} key={eachCoin.id}>
@@ -23,20 +27,19 @@ const CoinPage =(props)=> {
         })
     }//end display
 
-    // const coinBanner =()=>{
-    //     return props.coins.map((each)=>{
-    //         each.symbol+' '+each.quote.USD.price.toFixed(2)+'  '
-    //     })
-        
-    // }
+
 
 
     return (
-        <div>
+        <div style={{display:'flex'}}>
             <Navbar />               
             <br />
-            {displayInfo()}
-            {/* {coinBanner()} */}
+            <div style={{width: '50%', display:'block'}}>
+                {displayInfo()}
+            </div>
+            <div style={tickStyle}>
+                {/* {tickWindow()} */}
+            </div>
         </div>
     );
 }
