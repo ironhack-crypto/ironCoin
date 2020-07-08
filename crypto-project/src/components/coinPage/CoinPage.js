@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
 import Navbar from './../nav/Navbar'
-
+import 'bulma/css/bulma.css'
 
 const CoinPage =(props)=> {
 
-    const tickStyle={
-        width:'20%',
-        marginBottom: '15px',
-        right: '5px'
-    }
+    //style={{marginBottom: '15px', backgroundColor: 'lightgray'}}
 
     const displayInfo =()=>{
 
         return props.coins.map((eachCoin)=>{
             return (
-                <div style={{marginBottom: '15px'}} key={eachCoin.id}>
-                    <h1>{eachCoin.name}</h1>
+                <div key={eachCoin.id} className='box isDark'>
+                    <h1>{eachCoin.name} / {eachCoin.symbol}</h1>
                     <h3>Price: <span>${eachCoin.quote.USD.price.toFixed(2)}</span></h3>
                     <h3>Last Updated: <span>{eachCoin.last_updated}</span></h3>
                     <h3>Circulating Supply: <span>{eachCoin.circulating_supply}</span></h3>
                     <h3>Total Supply: <span>{eachCoin.total_supply}</span></h3>
                     <h3>Max Supply: <span>{eachCoin.max_supply}</span></h3>
-                    <h1>{eachCoin.symbol}</h1>
                 </div>                
             )
         })

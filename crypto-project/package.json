@@ -15,6 +15,7 @@
     "react-gsap": "^2.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "recharts": "^1.8.5",
     "request-promise": "^4.2.5"
   },
   "scripts": {
