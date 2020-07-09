@@ -7,7 +7,6 @@ const CoinPage =(props)=> {
     //style={{marginBottom: '15px', backgroundColor: 'lightgray'}}
 
     const displayInfo =()=>{
-
         return props.coins.map((eachCoin)=>{
             return (
                 <div key={eachCoin.id} className='box isDark'>
