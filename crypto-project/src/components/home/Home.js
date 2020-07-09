@@ -10,10 +10,10 @@ import Parallax from 'react-rellax'
 const Home = (props) => {
     const heroImg = {
         background: `url(${homeImg}) center no-repeat fixed`,
-        backgroundColor: '#1b0574',
+        // backgroundColor: '#1b0574',
         backgroundSize: '275vh',
         width: '100%',
-        height: '72vh',
+        height: '82vh',
         display: 'flex',
         alignItems: 'center'
     }
