@@ -21,9 +21,12 @@ const Ticker =(props)=>{
 
     const fadeOut =()=>{
         let tl=new TimelineMax
-        tl.to('.test0',2,{opacity: 0})
-          .to('.test1',2,{opacity: 0},'-=1')
-          .to('.test2',2,{opacity: 0},'-=1');
+        tl.to('.test0',2,{opacity: 0, x:5})
+          .to('.test1',2,{opacity: 0, x:5},'-=1')
+          .to('.test2',2,{opacity: 0, x:5},'-=1')
+          .to('.test0',2,{opacity: 1, x:0},'-=1')
+          .to('.test1',2,{opacity: 1, x:0},'-=1')
+          .to('.test2',2,{opacity: 1, x:0},'-=1');
     }
     
 

@@ -3,6 +3,7 @@ import homeImg from './homeImg.png'
 import { Link } from 'react-router-dom';
 import Navbar from './../nav/Navbar.js'
 import { LineChart, Line } from 'recharts';
+import Ticker from './../Ticker'
 import Graph from '../Graph'
 
 const Home = () => {
@@ -21,6 +22,9 @@ const Home = () => {
             <div style={heroImg}>
             </div>
             <Link to="/coin">Go to coin</Link>
+            <br />
+            <br />
+            <Link to="/ticker">Go to Ticker</Link>
             {/* <LineChart width={400} height={400} data={data}>
                 <Line type="monotone" dataKey="uv" stroke="#8884d8" />
             </LineChart> */}

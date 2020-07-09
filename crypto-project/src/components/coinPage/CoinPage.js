@@ -32,9 +32,7 @@ const CoinPage =(props)=> {
             <div style={{width: '50%', display:'block'}}>
                 {displayInfo()}
             </div>
-            <div style={tickStyle}>
-                {/* {tickWindow()} */}
-            </div>
+            
         </div>
     );
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link, Switch, Route } from 'react-router-dom';
 import './App.css'
 import 'bulma/css/bulma.css'
-// import Navbar from './components/nav/Navbar'
 import Home from './components/home/Home'
 import CoinPage from './components/coinPage/CoinPage.js'
 import Ticker from './components/Ticker'
