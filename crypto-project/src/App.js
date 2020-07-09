@@ -38,7 +38,7 @@ class App extends Component{
         {/* No Renders in App.js. Routes only */}
         <Switch>
           <Route exact path="/" render={(props)=><Home {...props}/>} />
-          <Route exact path="/ticker" render={(props)=><Ticker coins={this.state.coins}/>} />
+          <Route exact path="/ticker" render={(props)=><Ticker coins={this.state.coins} {...props}/>} />
           <Route path="/coin" render={(props)=><CoinPage coins={this.state.coins} {...props}/>}/>
         </Switch>
         

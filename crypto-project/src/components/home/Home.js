@@ -11,7 +11,7 @@ const Home = () => {
     const heroImg = {
         background: `linear-gradient( #11999e6e, #11999e6e ), url(${homeImg}) center no-repeat fixed`,
         width: '100%',
-        height: '530px',
+        height: '72vh',
         display: 'flex',
         alignItems: 'center'
     }
@@ -26,10 +26,10 @@ const Home = () => {
             <Navbar />
             <div style={heroImg}>
                 <Parallax speed={8}>
-                    <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '5vh' }}>Hack Your Crypto Portfolio</p>
+                    <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '35vh' }}>Hack Your Crypto Portfolio</p>
                 </Parallax>
             </div>
-            <div style={{backgroundColor: 'black', height: '700px'}}>
+            <div style={{backgroundColor: '#424242', height: '726px'}}>
             <Link to="/coin">Go to coin</Link>
             <br />
             <Link to="/ticker">Go to ticker</Link>
