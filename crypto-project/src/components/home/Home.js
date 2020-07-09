@@ -42,7 +42,7 @@ const Home = (props) => {
         return data
     }
     // background: linear-gradient( #11999e6e, #11999e6e ), url('./images/undraw_programming_2svr.svg') center no-repeat fixed;
-    // backgroundImage: `url(${homeImg})`
+    // backgroundImage: `url(${homeImg})`         #424242
     console.log(getGraphData())
     return (
         <div>
@@ -56,8 +56,8 @@ const Home = (props) => {
                 <br />
                 <h1 style={{ textAlign: 'center', color: 'blueviolet', marginBottom: '2vh' }}>Trending Coins</h1>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Graph data={getGraphData(0)} />
-                    <Graph data={getGraphData(1)} />
+                    <Graph data={getGraphData(0)} name={props[0]?.name} />
+                    <Graph data={getGraphData(1)} name={props[1]?.name} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Link to="/coin" style={{ padding: '20px', backgroundColor: 'skyblue'}}>Go to coin</Link>
