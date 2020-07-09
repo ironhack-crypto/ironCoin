@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom';
-import './Navbar.css'
+import { Nav } from 'reactbulma';
 
 const Navbar = () => {
     return (
         <nav>
-            <Link to="/" style={{}}</Link>
+            <Link to="/" style={{ Nav }} />
         </nav>
     )
 }
