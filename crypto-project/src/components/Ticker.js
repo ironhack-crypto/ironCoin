@@ -17,32 +17,24 @@ const Ticker =(props)=>{
     })
     
     const tickWindow =()=>{
-        // let res=''
-        // for(let i=currentGroup;i<6;i++){
-        //     res+= `<div key={eachCoin.id} className={'test'+val}><div key=${eachCoin.id} className=${'test'+val}><h1>${props.coins.symbol}</h1><h3>Price: <span>${props.coins.quote.USD.price.toFixed(2)}</span></h3></div>`;
-        // }
-        // currentGroup+=6
-        // return res
 
-        return coinGroup2.map((eachCoin,val)=>{
+        return coinGroup1.map((eachCoin,val)=>{
             return (
-                <div key={eachCoin.id} className={'test'+val}>
-                    <h1>{eachCoin.symbol}   <span style={{marginLeft: '20px'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span></h1>
-                    {/* <h3>Price: </h3> */}
+                <div key={eachCoin.id} className={'test'+val} style={{display: 'inline-flex', width: '100%'}}>
+                    <h1>{eachCoin.symbol}</h1>
+                    <span id={'sp'+val} style={{marginLeft: '20px'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
                 </div>                
             )
         })
     }//end display
 
-    // const tickWindow =()=>{
-    //     return <h1>{props.coins[0].symbol}</h1>
-    // }
-    
 
     //GSAP animations==============================================================
     const changeSymbol=()=>{
+        // tickWindow(coinGroup3)
         for(let i=0;i<10;i++){
-            document.querySelector('.test'+i+' h1').innerHTML='TESTER'+i
+            document.querySelector('.test'+i+' h1').innerHTML=coinGroup2[i].name
+            document.querySelector('.test'+i+' span').innerHTML='('+coinGroup2[i].quote.USD.price.toFixed(2)+')'
         }
     }//end
 
