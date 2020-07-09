@@ -9,7 +9,8 @@ import Parallax from 'react-rellax'
 
 const Home = () => {
     const heroImg = {
-        background: `linear-gradient( #11999e6e, #11999e6e ), url(${homeImg}) center no-repeat fixed`,
+        background: `url(${homeImg}) center no-repeat fixed`,
+        backgroundSize: '275vh',
         width: '100%',
         height: '72vh',
         display: 'flex',

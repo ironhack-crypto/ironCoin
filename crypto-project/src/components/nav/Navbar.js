@@ -5,8 +5,9 @@ import './Navbar.css'
 const Navbar = () => {
     return (
         <nav>
-            <Link to="/" style={{color: 'red'}}>Nav Placeholder (potentially slide menu to fill the empty purple space?)</Link>
+            <Link to="/" style={{}}</Link>
         </nav>
     )
 }
-export default Navbar
+export default Navbar 
+
