@@ -9,9 +9,10 @@ import Parallax from 'react-rellax'
 
 const Home = () => {
     const heroImg = {
-        background: `linear-gradient( #11999e6e, #11999e6e ), url(${homeImg}) center no-repeat fixed`,
+        background: `url(${homeImg}) center no-repeat fixed`,
+        backgroundSize: '275vh',
         width: '100%',
-        height: '72vh',
+        height: '82vh',
         display: 'flex',
         alignItems: 'center'
     }
@@ -26,7 +27,7 @@ const Home = () => {
             <Navbar />
             <div style={heroImg}>
                 <Parallax speed={8}>
-                    <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '35vh' }}>Hack Your Crypto Portfolio</p>
+                    <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '10vw', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
                 </Parallax>
             </div>
             <div style={{backgroundColor: '#424242', height: '726px'}}>
