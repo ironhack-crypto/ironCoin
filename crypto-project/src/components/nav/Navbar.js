@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom';
-import './Navbar.css'
+import { Nav } from 'reactbulma';
 
 const Navbar = () => {
     return (
         <nav>
-            <Link to="/" style={{color: 'red'}}>Nav Placeholder (potentially slide menu to fill the empty purple space?)</Link>
+            <Link to="/" style={{ Nav }} />
         </nav>
     )
 }
-export default Navbar
+export default Navbar 
+
