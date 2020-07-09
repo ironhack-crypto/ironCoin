@@ -10,6 +10,7 @@ import Parallax from 'react-rellax'
 const Home = () => {
     const heroImg = {
         background: `url(${homeImg}) center no-repeat fixed`,
+        // backgroundColor: '#1b0574',
         backgroundSize: '275vh',
         width: '100%',
         height: '82vh',
@@ -27,18 +28,23 @@ const Home = () => {
             <Navbar />
             <div style={heroImg}>
                 <Parallax speed={8}>
-                    <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '10vw', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
+                    <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
                 </Parallax>
             </div>
-            <div style={{backgroundColor: '#424242', height: '726px'}}>
-            <Link to="/coin">Go to coin</Link>
-            <br />
-            <Link to="/ticker">Go to ticker</Link>
-
-            <Graph />
+            <div style={{ backgroundColor: '#424242', height: '726px' }}>
+                <br />
+                <h1 style={{textAlign: 'center', color: 'blueviolet', marginBottom: '2vh'}}>Trending Coins</h1>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <Graph />
+                    <Graph />
+                </div>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                <Link to="/coin" style={{padding: '20px'}}>Go to coin</Link>
+                <Link to="/ticker" style={{padding: '20px'}}>Go to ticker</Link>
+                </div>
             </div>
 
-            
+
         </div>
     )
 }
