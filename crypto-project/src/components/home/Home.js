@@ -48,7 +48,7 @@ const Home = (props) => {
         <div>
             <Navbar />
             <div style={heroImg}>
-                <Parallax speed={10}>
+                <Parallax speed={11}>
                     <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
                 </Parallax>
             </div>

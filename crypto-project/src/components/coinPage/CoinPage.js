@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Navbar from './../nav/Navbar'
 import 'bulma/css/bulma.css'
+import { Link, Switch, Route } from 'react-router-dom';
+import CoinDetail from '../coindetail/CoinDetail'
 
-const CoinPage =(props)=> {
+const CoinPage = (props) => {
 
     //style={{marginBottom: '15px', backgroundColor: 'lightgray'}}
-
-    const displayInfo =()=>{
-        return props.coins.map((eachCoin)=>{
+    const[state, setState] = useState({})
+    const displayInfo = () => {
+        
+        return props.coins.map((eachCoin) => {
             return (
                 <div key={eachCoin.id} className='box isDark'>
                     <h1>{eachCoin.name} / {eachCoin.symbol}</h1>
@@ -16,22 +19,21 @@ const CoinPage =(props)=> {
                     <h3>Circulating Supply: <span>{eachCoin.circulating_supply}</span></h3>
                     <h3>Total Supply: <span>{eachCoin.total_supply}</span></h3>
                     <h3>Max Supply: <span>{eachCoin.max_supply}</span></h3>
-                </div>                
+                    <button onClick={() => setState({...eachCoin})}>More</button>
+                </div>
             )
         })
     }//end display
 
 
-
-
     return (
-        <div style={{display:'flex'}}>
-            <Navbar />               
+        <div style={{ display: 'flex' }}>
+            <Navbar />
             <br />
-            <div style={{width: '50%', display:'block'}}>
+            <div style={{ width: '50%', display: 'block' }}>
                 {displayInfo()}
             </div>
-            
+            <CoinDetail {...state}/>
         </div>
     );
 }
