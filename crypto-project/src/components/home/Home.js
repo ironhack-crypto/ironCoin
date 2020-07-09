@@ -55,7 +55,7 @@ const Home = (props) => {
             <div style={{ backgroundColor: '#424242', height: '726px' }}>
                 <br />
                 <h1 style={{ textAlign: 'center', color: 'blueviolet', marginBottom: '2vh' }}>Trending Coins</h1>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'black'}}>
                     <Graph data={getGraphData(0)} name={props[0]?.name} />
                     <Graph data={getGraphData(1)} name={props[1]?.name} />
                 </div>
