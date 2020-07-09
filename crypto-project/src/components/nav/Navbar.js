@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link, Switch, Route } from 'react-router-dom';
 import 'bulma/css/bulma.css';
-import { Button, Control, Field, Icon, Nav, NavCenter, NavItem, NavLeft, NavRight, NavToggle } from 'reactbulma';
+import { Button, Control, Field, Nav, NavCenter, NavItem, NavLeft, NavRight, NavToggle } from 'reactbulma';
 
 const Navbar = () => {
     return (
