@@ -1,6 +1,8 @@
 import React from 'react'
 import 'bulma/css/bulma.css';
-import { Button, Control, Field, Nav, NavCenter, NavItem, NavLeft, NavRight, NavToggle } from 'reactbulma';
+import { Link } from 'react-router-dom';
+import { Button, Level, Nav, NavCenter, NavItem } from 'reactbulma';
+import logo from './logo.favicon.jpg';
 
 const Navbar = () => {
     return (
@@ -8,14 +10,33 @@ const Navbar = () => {
         <Nav>
             <Nav.Center>
                 <Nav.Item>
-                    <Field groupedCentered>
-                        <Control>
-                            <Button dark inverted outlined>View Coins</Button>
-                        </Control>
-                        <Control>
-                            <Button dark inverted outlined>View Tickers</Button>
-                        </Control>
-                    </Field>
+                    <Level>
+                        <Level.Item hasTextCentered>
+                            <Link to="/">
+                                <Button info>Home</Button>
+                            </Link>
+                        </Level.Item>
+                        <Level.Item hasTextCentered>
+                            <Link to="/coin">
+                                <Button info>Coins</Button>
+                            </Link>
+                        </Level.Item>
+                        <Level.Item hasTextCentered>
+                            <Link to="/">
+                            <img src={logo} style={{height: '40px'}} />
+                            </Link>
+                        </Level.Item>
+                        <Level.Item hasTextCentered>
+                            <Link to="/ticker">
+                                <Button info>Tickers</Button>
+                            </Link>
+                        </Level.Item>
+                        <Level.Item hasTextCentered>
+                            <Link to="/contact">
+                                <Button info>Contact</Button>
+                            </Link>
+                        </Level.Item>
+                    </Level>
                 </Nav.Item>
             </Nav.Center>
         </Nav>

@@ -21,6 +21,8 @@ const Ticker =(props)=>{
 
 //STYLES===================================================================================
     const tickerWindow={
+        position: 'absolute',
+        marginTop: '79px',
         color: 'white',
         backgroundColor: '#424242',
         width: '290px'
@@ -31,17 +33,18 @@ const Ticker =(props)=>{
 
 
 
+
     const tickWindow =()=>{
 
         return currentGroup.map((eachCoin,val)=>{
             return (
-                <div key={eachCoin.id} className={'test'+val} style={{ backgroundColor: '#53565c',width: '100%', padding: '0 15px', border: 'solid grey 1px'}}>
+                <div key={eachCoin.id} className={'test'+val} onClick={()=>clearInterv()} style={{ backgroundColor: '#53565c',width: '100%', padding: '0 15px', border: 'solid grey 1px'}}>
                     <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', justifyContent: 'space-between', width: '100%'}}>
                         <h1 style={{fontSize: '25px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
                         <span id={'sp'+val} style={{color:'lightgreen'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
                     </Link>
                 </div>                
-            )
+            )            
         })        
     }//end tickWindow
 
@@ -85,17 +88,23 @@ const Ticker =(props)=>{
         }
 
         //delays function call to change inner information until elements aren't visible
-        setTimeout(changeSymbol,3300)
+        setTimeout(changeSymbol,3090)
 
-        tl.to('.test0',.5,{opacity: 1, x:0},'-=.2')
+        tl.to('.test0',.5,{opacity: 1, x:0})
         for(let i=1;i<11;i++){
             tl.to('.test'+i,.5,{opacity: 1, x:0},'-=.2')
           }
     }//end fadeOut
 
-    const tester=()=>{
-        setInterval(fadeOut, 8000);
+    //set and clear intervals
+    let intVal=''
+    const setInterv=()=>{
+        intVal=setInterval(fadeOut, 10000);
     }
+    const clearInterv=()=>{
+        clearInterval(intVal)
+    }
+
     
 // ========================================================================================
 
@@ -103,11 +112,10 @@ const Ticker =(props)=>{
         <div>
             <Navbar />
             <div style={tickerWindow}>
-                <br/>
                 <div className='window'>
                     {/* <button onClick={fadeOut}>fade</button> */}
                     {tickWindow()}
-                    {tester()}
+                    {setInterv()}              
                 </div>
             </div>
         </div>

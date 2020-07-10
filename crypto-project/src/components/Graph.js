@@ -33,13 +33,13 @@ export default class Graph extends Component {
   render() {
     return (
       <div>
-        <h3 style={{color: 'blueviolet', textAlign: 'center', fontSize: '35px'}}>{this.props.name}</h3>
+        <h2 style={{fontSize: '26px', color: 'blueviolet', textAlign: 'center'}}>{this.props.name}</h2>
         <LineChart
           width={500}
           height={300}
           data={this.props.data}
-          margin={{
-            top: 5, right: 30, left: 20, bottom: 5,
+          padding={{
+            top: '30px', right: '30px', left: '30px', bottom: '10px',
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
