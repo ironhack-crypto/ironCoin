@@ -42,22 +42,22 @@ const Home = (props) => {
         return data
     }
     // background: linear-gradient( #11999e6e, #11999e6e ), url('./images/undraw_programming_2svr.svg') center no-repeat fixed;
-    // backgroundImage: `url(${homeImg})`
+    // backgroundImage: `url(${homeImg})`         #424242
     console.log(getGraphData())
     return (
         <div>
             <Navbar />
             <div style={heroImg}>
-                <Parallax speed={10}>
+                <Parallax speed={11}>
                     <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
                 </Parallax>
             </div>
             <div style={{ backgroundColor: '#424242', height: '726px' }}>
                 <br />
                 <h1 style={{ textAlign: 'center', color: 'blueviolet', marginBottom: '2vh' }}>Trending Coins</h1>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Graph data={getGraphData(0)} />
-                    <Graph data={getGraphData(1)} />
+                <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'black'}}>
+                    <Graph data={getGraphData(0)} name={props[0]?.name} />
+                    <Graph data={getGraphData(1)} name={props[1]?.name} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Link to="/coin" style={{ padding: '20px', backgroundColor: 'skyblue'}}>Go to coin</Link>
