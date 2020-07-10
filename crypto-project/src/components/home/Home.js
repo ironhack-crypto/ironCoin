@@ -67,6 +67,7 @@ const Home = (props) => {
                 <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'black'}}>
                     <Graph data={getGraphData(0)} name={props[0]?.name} />
                     <Graph data={getGraphData(1)} name={props[1]?.name} />
+                    <Graph data={getGraphData(2)} name={props[2]?.name} />
                 </div>
                 <div style={{background: '#282a36', padding: '30px', width: '100%' }}>
                     <Nav>

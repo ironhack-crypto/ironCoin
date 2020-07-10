@@ -30,13 +30,20 @@ const CoinDetail = (props) => {
     console.log(props)
 
     return (
-        <div style={{backgroundColor: 'lightgray', marginTop: '7vh' }}>
-            <h1 style={{fontSize: '50px', marginTop: '10px', fontColor: 'black'}}>{props?.name}</h1>
+        <div style={{ backgroundColor: 'lightgray', marginTop: '7vh' }}>
+            <h1 style={{ fontSize: '50px', marginTop: '10px', fontColor: 'black' }}>{props?.name}</h1>
             <Graph data={plotCoinData()} name={props?.name} />
             <p>Circulating Supply: {props?.circulating_supply}</p>
             <p>Maximum Supply: {props?.max_supply}</p>
             <p>Market Pairs: {props?.num_market_pairs}</p>
             <p>Slug: {props?.slug}</p>
+            <div style={{ backgroundColor: 'gray' }}>
+                <h4 style={{textDecoration: 'underline', fontWeight: 'bold'}}>Price Information</h4>
+                <p>Percent Change Over 7 Days: {props?.quote?.USD?.percent_change_7d}%</p>
+                <p>Percent Change Over 24 Hours: {props?.quote?.USD?.percent_change_24h}%</p>
+                <p>Percent Change Over 1 Hour: {props?.quote?.USD?.percent_change_1h}%</p>
+                <p>Current Price: {props?.quote?.USD?.percent_change_24h}%</p>
+            </div>
         </div>
     )
 }
