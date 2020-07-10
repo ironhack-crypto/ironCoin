@@ -41,7 +41,7 @@ const Ticker =(props)=>{
                         <span id={'sp'+val} style={{color:'lightgreen'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
                     </Link>
                 </div>                
-            )
+            )            
         })        
     }//end tickWindow
 
@@ -85,7 +85,7 @@ const Ticker =(props)=>{
         }
 
         //delays function call to change inner information until elements aren't visible
-        setTimeout(changeSymbol,3300)
+        setTimeout(changeSymbol,3100)
 
         tl.to('.test0',.5,{opacity: 1, x:0},'-=.2')
         for(let i=1;i<11;i++){
@@ -93,8 +93,9 @@ const Ticker =(props)=>{
           }
     }//end fadeOut
 
+    let intNum=1000
     const tester=()=>{
-        setInterval(fadeOut, 8000);
+        setInterval(fadeOut, 10000);
     }
     
 // ========================================================================================
@@ -107,7 +108,7 @@ const Ticker =(props)=>{
                 <div className='window'>
                     {/* <button onClick={fadeOut}>fade</button> */}
                     {tickWindow()}
-                    {tester()}
+                    {tester()}              
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ import { Nav } from 'reactbulma';
 const Navbar = () => {
     return (
         <nav>
-            <Link to="/" style={{ Nav }} />
+            <Link to="/" style={{Nav}}> home </Link>
         </nav>
     )
 }
