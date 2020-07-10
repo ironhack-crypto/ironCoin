@@ -6,7 +6,7 @@ import { LineChart, Line } from 'recharts';
 import Ticker from './../Ticker'
 import Graph from '../Graph'
 import Parallax from 'react-rellax'
-import { Content, Control, Field, Title } from 'reactbulma';
+import { Button, Content, Control, Field, Nav, NavCenter, NavItem, Title } from 'reactbulma';
 
 const Home = (props) => {
     const heroImg = {
@@ -53,13 +53,13 @@ const Home = (props) => {
                     <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
                 </Parallax>
             </div>
-            <div style={{ backgroundColor: '#282a36', height: '726px' }}>
+            <div style={{ backgroundColor: '#282a36', height: '600px' }}>
                 <br />
                 <div>
                     <Content>
                         <Field groupedCentered>
                             <Control>
-                                <Title is='1' style={{ color: '#85f2ef' }}>Trending Coins</Title>
+                                <Title is='1' style={{ color: '#00d1b2' }}>Trending Coins</Title>
                             </Control>
                         </Field>
                     </Content>
@@ -68,13 +68,27 @@ const Home = (props) => {
                     <Graph data={getGraphData(0)} name={props[0]?.name} />
                     <Graph data={getGraphData(1)} name={props[1]?.name} />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Link to="/coin" style={{ padding: '20px', backgroundColor: 'skyblue'}}>Go to coin</Link>
-                    <Link to="/ticker" style={{ padding: '20px', backgroundColor: 'skyblue', marginLeft: '1vw'}}>Go to ticker</Link>
+                <div style={{background: '#282a36', padding: '30px', width: '100%' }}>
+                    <Nav>
+                        <Nav.Item>
+                            <Content>
+                                <Field groupedCentered>
+                                    <Control>
+                                        <Link to="/coin">
+                                            <Button primary style={{ color: '#000000' }}>Coin Details</Button>
+                                        </Link> 
+                                    </Control>
+                                    <Control>
+                                        <Link to="/ticker">
+                                            <Button primary style={{ color: '#000000' }}>View Tickers</Button>
+                                        </Link>
+                                    </Control>
+                                </Field>
+                            </Content>
+                        </Nav.Item>
+                    </Nav>
                 </div>
             </div>
-
-
         </div>
     )
 }
