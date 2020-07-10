@@ -43,6 +43,7 @@ const CoinDetail = (props) => {
                 <p>Percent Change Over 24 Hours: {props?.quote?.USD?.percent_change_24h}%</p>
                 <p>Percent Change Over 1 Hour: {props?.quote?.USD?.percent_change_1h}%</p>
                 <p>Current Price: {props?.quote?.USD?.percent_change_24h}%</p>
+                <p>Symbol: {props?.symbol}</p>
             </div>
         </div>
     )
