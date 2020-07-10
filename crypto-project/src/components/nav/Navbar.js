@@ -1,5 +1,6 @@
 import React from 'react'
 import 'bulma/css/bulma.css';
+import { Link } from 'react-router-dom';
 import { Button, Control, Field, Nav, NavCenter, NavItem, NavLeft, NavRight, NavToggle } from 'reactbulma';
 
 const Navbar = () => {
@@ -10,10 +11,14 @@ const Navbar = () => {
                 <Nav.Item>
                     <Field groupedCentered>
                         <Control>
-                            <Button dark inverted outlined>View Coins</Button>
+                            <Link to="/coin">
+                                <Button dark inverted outlined>View Coins</Button>
+                            </Link>   
                         </Control>
                         <Control>
-                            <Button dark inverted outlined>View Tickers</Button>
+                            <Link to="/ticker">
+                                <Button dark inverted outlined>View Tickers</Button>
+                            </Link>
                         </Control>
                     </Field>
                 </Nav.Item>

@@ -6,6 +6,7 @@ import { LineChart, Line } from 'recharts';
 import Ticker from './../Ticker'
 import Graph from '../Graph'
 import Parallax from 'react-rellax'
+import { Content, Control, Field, Title } from 'reactbulma';
 
 const Home = (props) => {
     const heroImg = {
@@ -52,9 +53,17 @@ const Home = (props) => {
                     <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
                 </Parallax>
             </div>
-            <div style={{ backgroundColor: '#424242', height: '726px' }}>
+            <div style={{ backgroundColor: '#282a36', height: '726px' }}>
                 <br />
-                <h1 style={{ textAlign: 'center', color: 'blueviolet', marginBottom: '2vh' }}>Trending Coins</h1>
+                <div>
+                    <Content>
+                        <Field groupedCentered>
+                            <Control>
+                                <Title is='1' style={{ color: '#85f2ef' }}>Trending Coins</Title>
+                            </Control>
+                        </Field>
+                    </Content>
+                </div>
                 <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'black'}}>
                     <Graph data={getGraphData(0)} name={props[0]?.name} />
                     <Graph data={getGraphData(1)} name={props[1]?.name} />
