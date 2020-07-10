@@ -1,4 +1,4 @@
-# IronCoin
+# ironCoin
 
 ## About the App
 The objective of this project the creation of an application that displays both real-time and historical data for a number of popular cryptocurrencies.
@@ -8,6 +8,6 @@ This project is being developed by a three-man team with help from the Ironhack 
 
 We are primarily using npm, Microsoft Visual Studio, and the Google Developer Console to render and debug the code. This is our largest endeavor thus far, and we are excited for the opportunity to sharpen our skills and achieve new heights thanks to the flexibility of React. The application will ultimately be deployed using GitHub pages.
 
-## AT A GLANCE: Technologies Employed--
+## AT A GLANCE: Technologies Employed --
 
 React.js | Node.js | REST API | npm | Bulma CSS | json 
