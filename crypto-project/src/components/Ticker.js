@@ -7,13 +7,13 @@ import { TimelineMax, TweenMax, Power3 } from 'gsap';
 const Ticker =(props)=>{   
 // 3 different coin groups. 10 coins each   
     const coinGroup1= props.coins.filter((each,ind)=>{
-        return ind<10
+        return ind<7
     })
     const coinGroup2= props.coins.filter((each,ind)=>{
-        return ind<=20 && ind>=10
+        return ind<=13 && ind>=7
     })
     const coinGroup3= props.coins.filter((each,ind)=>{
-        return ind<=30 && ind>=20
+        return ind<=20 && ind>=14
     })
 
     let currentGroup=coinGroup1
@@ -21,11 +21,15 @@ const Ticker =(props)=>{
 
 //STYLES===================================================================================
     const tickerWindow={
-        position: 'absolute',
-        marginTop: '79px',
+        textAlign: 'center',
+        backgroundColor: '#282a36',
+        position: 'fixed',
+        padding: '7vh 0 0 1vw',
         color: 'white',
-        backgroundColor: '#424242',
-        width: '290px'
+        // backgroundColor: '#424242',
+        width: '100%',
+        height: '109px',
+        // zIndex: '1999'
     }
 
 
@@ -38,10 +42,11 @@ const Ticker =(props)=>{
 
         return currentGroup.map((eachCoin,val)=>{
             return (
-                <div key={eachCoin.id} className={'test'+val} onClick={()=>clearInterv()} style={{ backgroundColor: '#53565c',width: '100%', padding: '0 15px', border: 'solid grey 1px'}}>
-                    <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', justifyContent: 'space-between', width: '100%'}}>
-                        <h1 style={{fontSize: '25px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
-                        <span id={'sp'+val} style={{color:'lightgreen'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
+
+                <div key={eachCoin.id} className={'test'+val} onClick={()=>clearInterv()} style={{ width: '100%', padding: '0 15px'}}>
+                    <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', width: '200px', borderBottom: '1px solid lightgreen'}}>
+                        <h1 style={{color:'lightgreen', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
+                        <span id={'sp'+val} style={{color: 'lightgrey'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
                     </Link>
                 </div>                
             )            
@@ -69,9 +74,17 @@ const Ticker =(props)=>{
                 break;
         }
 
-        for(let i=0;i<10;i++){
+    const lengthCheck=(name)=>{
+        let res=name
+        if(res.length>10){
+            res= name.split(' ')[0];
+        }
+        return res
+    }
+
+        for(let i=0;i<currentGroup.length;i++){
             if(coin[i]) {
-                document.querySelector('.test'+i+' h1').innerHTML=coin[i].name
+                document.querySelector('.test'+i+' h1').innerHTML=lengthCheck(coin[i].name)
                 document.querySelector('.test'+i+' span').innerHTML='('+coin[i].quote.USD.price.toFixed(2)+')'
             }
         }
@@ -112,7 +125,7 @@ const Ticker =(props)=>{
         <div>
             <Navbar />
             <div style={tickerWindow}>
-                <div className='window'>
+                <div style={{display: 'inline-flex'}}>
                     {/* <button onClick={fadeOut}>fade</button> */}
                     {tickWindow()}
                     {setInterv()}              

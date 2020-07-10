@@ -19,6 +19,7 @@ const Home = (props) => {
     }
 
     console.log(props[0]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_7d/100)), props[0]?.quote.USD.price, 1 + (props[0]?.quote.USD.percent_change_7d/100))
+    // console.log( props[8])
     const getGraphData = (ind) => {
         let week = props[ind]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_7d/100))
         let day = props[ind]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_24h/100))
@@ -49,7 +50,8 @@ const Home = (props) => {
             <Navbar />
             <div style={heroImg}>
                 <Parallax speed={11}>
-                    <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p>
+                    {/* <Ticker coins={props.coins}/> */}
+                    {/* <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p> */}
                 </Parallax>
             </div>
             <div style={{ backgroundColor: '#424242', height: '726px' }}>

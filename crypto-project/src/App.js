@@ -7,6 +7,7 @@ import CoinPage from './components/coinPage/CoinPage.js'
 import Ticker from './components/Ticker'
 import axios from 'axios'
 import CoinDetail from './components/coindetail/CoinDetail'
+import Navbar from './components/nav/Navbar';
 
 class App extends Component {
 
@@ -29,16 +30,23 @@ class App extends Component {
   // =================================================================
 
 
-
-
-
+  
+  
   render() {
+    
+    // coins.forEach(coin=>{
+    //   console.log('{id:'+coin.id+', name: '+coin.name+'')
+    // })
 
     return (
       <div >
+        {/* <Home coins={this.state.coins} /> */}
+        <Ticker coins={this.state.coins} />
+        {/* <Home coins={this.state.coins} /> */}
+
         {/* No Renders in App.js. Routes only */}
         <Switch>
-          <Route exact path="/" render={(props) => <Home {...this.state.coins} />} />
+          <Route exact path="/" render={(props) => <Home coins={this.state.coins} {...this.state.coins} />} />
           <Route exact path="/ticker" render={(props) => <Ticker coins={this.state.coins} {...props} />} />
           <Route path="/coin" render={(props) => <CoinPage coins={this.state.coins} {...props} />} />
         </Switch>
