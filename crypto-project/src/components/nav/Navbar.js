@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import 'bulma/css/bulma.css';
 import { Link } from 'react-router-dom';
 import { Button, Level, Nav, NavCenter, NavItem } from 'reactbulma';
