@@ -33,7 +33,7 @@ export default class Graph extends Component {
   render() {
     return (
       <div>
-        <h3 style={{color: 'blueviolet', textAlign: 'center'}}>{this.props.name}</h3>
+        <h3 style={{color: 'blueviolet', textAlign: 'center', fontSize: '35px'}}>{this.props.name}</h3>
         <LineChart
           width={500}
           height={300}
