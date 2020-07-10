@@ -29,7 +29,7 @@ const Ticker =(props)=>{
         // backgroundColor: '#424242',
         width: '100%',
         height: '109px',
-        // zIndex: '1999'
+        zIndex: '998'
     }
 
 
@@ -39,11 +39,9 @@ const Ticker =(props)=>{
 
 
     const tickWindow =()=>{
-
         return currentGroup.map((eachCoin,val)=>{
             return (
-
-                <div key={eachCoin.id} className={'test'+val} onClick={()=>clearInterv()} style={{ width: '100%', padding: '0 15px'}}>
+                <div key={eachCoin.id} className={'test'+val} style={{ width: '100%', padding: '0 15px'}}>
                     <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', width: '200px', borderBottom: '1px solid lightgreen'}}>
                         <h1 style={{color:'lightgreen', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
                         <span id={'sp'+val} style={{color: 'lightgrey'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
@@ -56,6 +54,15 @@ const Ticker =(props)=>{
     
 
 //GSAP animations==============================================================
+    //Shortens name length if over 10 char
+    const lengthCheck=(name)=>{
+        let res=name
+        if(res.length>10){
+            res= name.split(' ')[0];
+        }
+        return res
+    }
+    
     const changeSymbol=()=>{
         // tickWindow(coinGroup3)
         let coin=[]
@@ -72,16 +79,9 @@ const Ticker =(props)=>{
                 coin=coinGroup1;
                 currentGroup=coinGroup1;
                 break;
-        }
-
-    const lengthCheck=(name)=>{
-        let res=name
-        if(res.length>10){
-            res= name.split(' ')[0];
-        }
-        return res
-    }
-
+            }     
+        
+        
         for(let i=0;i<currentGroup.length;i++){
             if(coin[i]) {
                 document.querySelector('.test'+i+' h1').innerHTML=lengthCheck(coin[i].name)
@@ -89,7 +89,7 @@ const Ticker =(props)=>{
             }
         }
     }//end changeSymbol
-
+    
 
 
     const fadeOut =()=>{
@@ -107,28 +107,23 @@ const Ticker =(props)=>{
         for(let i=1;i<11;i++){
             tl.to('.test'+i,.5,{opacity: 1, x:0},'-=.2')
           }
-    }//end fadeOut
-
-    //set and clear intervals
-    let intVal=''
-    const setInterv=()=>{
-        intVal=setInterval(fadeOut, 10000);
-    }
-    const clearInterv=()=>{
-        clearInterval(intVal)
-    }
+        //repeats the fading  
+        setTimeout(fadeOut,10000)
+        }//end fadeOut
+    //timer to start the fading after page load
+    setTimeout(fadeOut,5000)
 
     
 // ========================================================================================
 
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             <div style={tickerWindow}>
                 <div style={{display: 'inline-flex'}}>
                     {/* <button onClick={fadeOut}>fade</button> */}
                     {tickWindow()}
-                    {setInterv()}              
+                    
                 </div>
             </div>
         </div>
