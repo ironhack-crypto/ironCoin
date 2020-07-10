@@ -21,9 +21,9 @@ const Home = (props) => {
 
     console.log(props[0]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_7d/100)), props[0]?.quote.USD.price, 1 + (props[0]?.quote.USD.percent_change_7d/100))
     const getGraphData = (ind) => {
-        let week = props[ind]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_7d/100))
-        let day = props[ind]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_24h/100))
-        let hour = props[ind]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_1h/100))
+        let week = props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_7d/100))
+        let day = props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_24h/100))
+        let hour = props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_1h/100))
         let curr = Math.floor(props[ind]?.quote.USD.price * 100)/100
 
         const data = [
