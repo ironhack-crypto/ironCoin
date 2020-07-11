@@ -1,7 +1,9 @@
 import React, { Component, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from './nav/Navbar.js'
+import Navbar from './nav/Navbar.js';
 import { TimelineMax, TweenMax, Power3 } from 'gsap';
+import './components.css';
+import 'bulma/css/bulma.css';
 
 
 const Ticker =(props)=>{   

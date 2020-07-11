@@ -6,6 +6,7 @@ import Graph from '../Graph';
 import Parallax from 'react-rellax';
 import { Button, Content, Control, Field, Heading, Level, Nav, Title } from 'reactbulma';
 import '../components.css';
+import 'bulma/css/bulma.css';
 
 const Home = (props) => {
     const heroImg = {
