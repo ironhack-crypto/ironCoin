@@ -42,8 +42,8 @@ const Ticker =(props)=>{
         return currentGroup.map((eachCoin,val)=>{
             return (
                 <div key={eachCoin.id} className={'test'+val} style={{ width: '100%', padding: '0 15px'}}>
-                    <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', width: '200px', borderBottom: '1px solid lightgreen'}}>
-                        <h1 style={{color:'lightgreen', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
+                    <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', width: '200px', borderBottom: '1px solid #00d1b2'}}>
+                        <h1 style={{color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
                         <span id={'sp'+val} style={{color: 'lightgrey'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
                     </Link>
                 </div>                

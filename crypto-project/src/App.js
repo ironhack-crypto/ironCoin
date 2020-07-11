@@ -6,8 +6,6 @@ import Home from './components/home/Home'
 import CoinPage from './components/coinPage/CoinPage.js'
 import Ticker from './components/Ticker'
 import axios from 'axios'
-import CoinDetail from './components/coindetail/CoinDetail'
-import Navbar from './components/nav/Navbar';
 
 class App extends Component {
 

@@ -33,15 +33,15 @@ export default class Graph extends Component {
   render() {
     return (
       <div>
-        <h2 style={{fontSize: '26px', color: 'blueviolet', textAlign: 'center'}}>{this.props.name}</h2>
+        <h2 style={{fontFamily: 'Dosis', fontSize: '30px', fontWeight: '700', color: 'blueviolet', textAlign: 'center'}}>{this.props.name}</h2>
         <LineChart
-          width={500}
+          style={{fontFamily: 'Lato'}}
+          width={450}
           height={300}
           data={this.props.data}
           padding={{
             top: '30px', right: '30px', left: '30px', bottom: '10px',
-          }}
-        >
+          }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
