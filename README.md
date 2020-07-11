@@ -1,7 +1,7 @@
 # ironCoin
 
 ## About the App
-The objective of this project the creation of an application that displays both real-time and historical data for a number of popular cryptocurrencies.
+The objective of this project is the creation of an application that displays both real-time and historical data for a number of popular cryptocurrencies.
 
 ### Project Details
 This project is being developed by a three-man team with help from the Ironhack instructors. We are using React.js and its associated npm packages as the framework for the application, with a healthy dose of Bulma CSS to smooth out the edges. The data being displayed is rendered using an API provided courtesy of CoinMarketCap, a well-renowed authority employed by the likes of Coinbase and Samsung.
