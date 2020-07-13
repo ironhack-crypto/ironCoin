@@ -14,12 +14,13 @@
 }
 
 .contIndStyle{
-    border: solid 1px lightgrey;
+    /* border: solid 1px lightgrey; */
     padding: 50px;
     background-color: #282a36;
     margin: 0 10px;
     opacity: 0;
     font-family: Dosis;
+    transform: scaleX(0.9);
 }
 
 .contH1{

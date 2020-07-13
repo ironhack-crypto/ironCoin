@@ -8,18 +8,18 @@ import { Button, Control, Field } from 'reactbulma';
 class Contact extends Component{
 
     animate=()=>{
-        
         let tl=new TimelineMax
-        
-        tl.to(`#name1`,1,{ opacity: 1, marginTop: '10px'},'-=.3')
-        tl.to(`#name3`,1,{ opacity: 1, marginTop: '10px'},'-=.3')
-        tl.to(`#name2`,1,{ opacity: 1, marginTop: '10px'},'-=.5')
+        for(let i=1;i<4;i++){
+            tl.to(`#name${i}`,.5,{ opacity: 1, scaleX:1, marginTop: '10px'},'-=.1')
+        }
     }
+
 
     componentDidMount(){
         this.animate()
     }
 
+    
     render(){
         return (
             <div className='contDiv'>
