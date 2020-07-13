@@ -48,7 +48,7 @@ const Home = (props) => {
     console.log(getGraphData())
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             <div style={heroImg}>
                 <Parallax speed={11}>
                     {/* <Ticker coins={props.coins}/> */}

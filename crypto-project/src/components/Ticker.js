@@ -25,12 +25,11 @@ const Ticker =(props)=>{
     const tickerWindow={
         textAlign: 'center',
         backgroundColor: '#282a36',
-        position: 'fixed',
-        padding: '7vh 0 0 1vw',
+        position: 'reletive',
+        padding: '2vh 0 0 1vw',
         color: 'white',
-        // backgroundColor: '#424242',
         width: '100%',
-        height: '109px',
+        height: '57px',
         zIndex: '998'
     }
 
@@ -43,7 +42,7 @@ const Ticker =(props)=>{
     const tickWindow =()=>{
         return currentGroup.map((eachCoin,val)=>{
             return (
-                <div key={eachCoin.id} className={'test'+val} style={{ width: '100%', padding: '0 15px'}}>
+                <div key={eachCoin.id} className={'test'+val} style={{ width: '100%', padding: '0 35px'}}>
                     <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', width: '200px', borderBottom: '1px solid #00d1b2'}}>
                         <h1 style={{color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
                         <span id={'sp'+val} style={{color: 'lightgrey'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
@@ -66,7 +65,6 @@ const Ticker =(props)=>{
     }
     
     const changeSymbol=()=>{
-        // tickWindow(coinGroup3)
         let coin=[]
         switch(currentGroup[0]){
             case coinGroup1[0]:
@@ -102,25 +100,23 @@ const Ticker =(props)=>{
           tl.to('.test'+i,.5,{opacity: 0, x:5},'-=.2')
         }
 
-        //delays function call to change inner information until elements aren't visible
-        setTimeout(changeSymbol,3090)
+        
+        setTimeout(changeSymbol,3090)//delays function call to change symbols
 
         tl.to('.test0',.5,{opacity: 1, x:0})
         for(let i=1;i<11;i++){
             tl.to('.test'+i,.5,{opacity: 1, x:0},'-=.2')
-          }
-        //repeats the fading  
-        setTimeout(fadeOut,10000)
+          }  
+        setTimeout(fadeOut,10000) //repeats the fading  
         }//end fadeOut
-    //timer to start the fading after page load
-    setTimeout(fadeOut,5000)
+
+    setTimeout(fadeOut,5000)//timer to start the fading after page load
 
     
 // ========================================================================================
 
     return (
         <div>
-            {/* <Navbar /> */}
             <div style={tickerWindow}>
                 <div style={{display: 'inline-flex'}}>
                     {/* <button onClick={fadeOut}>fade</button> */}

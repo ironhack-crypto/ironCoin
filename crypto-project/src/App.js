@@ -7,6 +7,9 @@ import Home from './components/home/Home';
 import CoinPage from './components/graphPage/graphPage.js';
 import Ticker from './components/Ticker';
 import axios from 'axios';
+import Navbar from './components/nav/Navbar';
+import Contact from './components/contact/Contact'
+import MarketPage from './components/marketPage/MarketPage'
 
 class App extends Component {
 
@@ -37,27 +40,23 @@ class App extends Component {
   
   
   render() {
-    
-    let str = JSON.stringify(this.state.coins);
-    str = JSON.stringify(this.state.coins, null, 4); // (Optional) beautiful indented output.
-    console.log(str); // Logs output to dev tools console.
+//CODE TO PRINT ENTIRE OBJECT FROM API CALL====================================================  
+    // let str = JSON.stringify(this.state.coins);
+    // str = JSON.stringify(this.state.coins, null, 4); // (Optional) beautiful indented output.
+    // console.log(str); // Logs output to dev tools console.
     // alert(str);
+// ================================================================================================
 
-    // coins.forEach(coin=>{
-    //   console.log('{id:'+coin.id+', name: '+coin.name+'')
-    // })
+
 
     return (
       <div >
-        {/* <Home coins={this.state.coins} /> */}
-        <Ticker coins={this.state.coins} />
-        {/* <Home coins={this.state.coins} /> */}
-
-        {/* No Renders in App.js. Routes only */}
+        <Navbar coins={this.state.coins} />
         <Switch>
           <Route exact path="/" render={(props) => <Home coins={this.state.coins} {...this.state.coins} />} />
-          <Route exact path="/ticker" render={(props) => <Ticker coins={this.state.coins} {...props} />} />
+          <Route exact path="/market" render={(props) => <MarketPage coins={this.state.coins} {...props} />} />
           <Route path="/coin" render={(props) => <CoinPage coins={this.state.coins} {...props} />} />
+          <Route path="/contact" render={(props) => <Contact coins={this.state.coins} {...props} />} />
         </Switch>
       </div>
     );

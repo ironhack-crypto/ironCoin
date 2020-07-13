@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 import { Button, Level, Media, Nav, } from 'reactbulma';
 import logo from './logo.favicon.jpg';
 import '../components.css';
+import Ticker from '../Ticker';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const coins= props.coins
+    console.log(coins)
+
     return (
-    <div style={{ background: '#282a36', position: 'fixed', padding: '10px', width: '100%', zIndex: '999' }}>
+    <div style={{ background: '#282a36', position: 'fixed', padding: '10px', width: '100%'}}>
+    
         <Nav>
             <Level>
                 <Level.Item hasTextCentered>
@@ -16,7 +21,7 @@ const Navbar = () => {
                     </Link>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Link to="/ticker">
+                    <Link to="/market">
                         <Button info style={{ fontFamily: 'Dosis'}}>Market</Button>
                     </Link>
                 </Level.Item>
@@ -39,6 +44,7 @@ const Navbar = () => {
                 </Level.Item>
             </Level>
         </Nav>
+        <Ticker coins={coins}/>
     </div>
     );
 }

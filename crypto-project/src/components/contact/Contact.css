@@ -1,0 +1,27 @@
+
+.container{
+    position: relative; 
+    top: 250px;
+    display: flex; 
+    justify-content: space-between;
+    color: #00d1b2;
+}
+
+.indStyle{
+    border: solid 1px lightgrey;
+    padding: 50px;
+    background-color: #282a36;
+    margin: 0 10px;
+}
+
+h1{
+    margin-bottom: 15px;
+    color: white;
+    font-size: 75px;
+}
+h2{
+    margin-bottom: 15px;
+}
+span{
+    color: white;
+}

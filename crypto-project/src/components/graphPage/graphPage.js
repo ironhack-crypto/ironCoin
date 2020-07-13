@@ -28,7 +28,7 @@ const CoinPage = (props) => {
 
     return (
         <div >
-            <Navbar />
+            {/* <Navbar /> */}
             <div style={{ display: 'flex' }}>
                 <br />
                 <div style={{ width: '50%', display: 'block', marginTop:'18vh' }}>
