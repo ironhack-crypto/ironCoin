@@ -55,7 +55,7 @@ const Home = (props) => {
                     {/* <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p> */}
                 </Parallax>
             </div>
-            <div style={{ backgroundColor: '#282a36', height: '600px'}}>
+            <div style={{ backgroundColor: '#282a36', height: '580px'}}>
                 <br />
                 <div>
                     <Content>
@@ -95,7 +95,7 @@ const Home = (props) => {
                     <Nav>
                         <Field groupedCentered>
                             <Control>
-                                <Link to="/ticker">
+                                <Link to="/market">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: '700' }}>Market Overview</Button>
                                 </Link> 
                             </Control>
