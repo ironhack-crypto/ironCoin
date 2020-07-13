@@ -24,13 +24,17 @@ class App extends Component {
         // "https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=be474ff9-0c14-4391-8ae4-c85c6eabda97"
       ).then(response => {
         this.setState({ //set state to coin list. Data twice because of how the objects are designed in API
-          coins: response.data.data
+          coins: response.data.data.sort((a,b)=>{
+            return b.quote.USD.price - a.quote.USD.price;
+        })
         })//end setstate
       })//end then
       .catch((err) => {
         console.log(err)
         this.setState({// sets the state to default JSON file if error is returned
-          coins: CoinList
+          coins: CoinList.sort((a,b)=>{
+            return b.quote.USD.price - a.quote.USD.price;
+        })
         })
       });
   }

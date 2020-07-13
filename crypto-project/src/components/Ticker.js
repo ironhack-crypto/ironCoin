@@ -9,9 +9,9 @@ import './Ticker.css'
 
 const Ticker =(props)=>{   
 // 3 different coin groups. 10 coins each 
-    let coins = props.coins.sort((a,b)=>{
-        return b.quote.USD.price - a.quote.USD.price;
-    })
+    // let coins = props.coins.sort((a,b)=>{
+    //     return b.quote.USD.price - a.quote.USD.price;
+    // })
     const coinGroup1= props.coins.filter((each,ind)=>{
         return ind<7
     })
