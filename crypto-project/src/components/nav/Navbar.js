@@ -19,7 +19,7 @@ const Navbar = (props) => {
     }
 
     return (
-    <div style={{ background: '#282a36', position: 'fixed', padding: '10px', width: '100%'}}>
+    <div style={{ background: '#282a36', position: 'fixed', padding: '10px', width: '100%', zIndex:'999'}}>
     
         <Nav>
             <Level>
