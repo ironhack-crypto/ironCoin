@@ -96,12 +96,12 @@ const Home = (props) => {
                         <Field groupedCentered>
                             <Control>
                                 <Link to="/ticker">
-                                    <Button primary style={{ fontFamily: 'Dosis', color: '#000000', fontWeight: '700' }}>Market Overview</Button>
+                                    <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: '700' }}>Market Overview</Button>
                                 </Link> 
                             </Control>
                             <Control>
                                 <Link to="/coin">
-                                    <Button primary style={{ fontFamily: 'Dosis', color: '#000000', fontWeight: '700' }}>Graph Analysis</Button>
+                                    <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: '700' }}>Graph Analysis</Button>
                                 </Link>
                             </Control>
                         </Field>
