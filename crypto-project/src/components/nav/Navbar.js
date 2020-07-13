@@ -8,7 +8,15 @@ import Ticker from '../Ticker';
 
 const Navbar = (props) => {
     const coins= props.coins
-    console.log(coins)
+    const btnStyle={ 
+        fontFamily: 'Dosis',
+        width: '90%',
+        backgroundColor:'#00d1b2',
+        color:'darkviolet',
+        fontWeight: 'bold',
+        letterSpacing: '7px'
+
+    }
 
     return (
     <div style={{ background: '#282a36', position: 'fixed', padding: '10px', width: '100%'}}>
@@ -16,13 +24,13 @@ const Navbar = (props) => {
         <Nav>
             <Level>
                 <Level.Item hasTextCentered>
-                    <Link to="/">
-                        <Button info style={{ fontFamily: 'Dosis'}}>Home</Button>
+                    <Link to="/"  style={btnStyle}>
+                        <Button info style={btnStyle}>Home</Button>
                     </Link>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Link to="/market">
-                        <Button info style={{ fontFamily: 'Dosis'}}>Market</Button>
+                    <Link to="/market" style={btnStyle}>
+                        <Button info style={btnStyle}>Market</Button>
                     </Link>
                 </Level.Item>
                 <Level.Item hasTextCentered>
@@ -33,13 +41,13 @@ const Navbar = (props) => {
                     </Media>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Link to="/coin">
-                        <Button info style={{ fontFamily: 'Dosis'}}>Graphs</Button>
+                    <Link to="/coin" style={btnStyle}>
+                        <Button info style={btnStyle}>Graphs</Button>
                     </Link>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Link to="/contact">
-                        <Button info style={{ fontFamily: 'Dosis'}}>Contact</Button>
+                    <Link to="/contact" style={btnStyle}>
+                        <Button info style={btnStyle}>Contact</Button>
                     </Link>
                 </Level.Item>
             </Level>
