@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import CoinList from './DefaultData.json'
 import 'bulma/css/bulma.css';
 import Home from './components/home/Home';
 import CoinPage from './components/graphPage/graphPage.js';
@@ -16,14 +17,19 @@ class App extends Component {
   //SERVER PROMISE-REQUEST==========================================
   componentDidMount() {
     axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=16e97361-585c-4270-bb8b-1f2a39fc956a"
+      .get(// TAKE COMMENT OFF WHEN DEPLOYING AND PUT IN LIVE API!! vvvvv
+        // "https://cors-anywhere.herokuapp.com/https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=16e97361-585c-4270-bb8b-1f2a39fc956a"
       ).then(response => {
         this.setState({ //set state to coin list. Data twice because of how the objects are designed in API
           coins: response.data.data
         })//end setstate
       })//end then
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err)
+        this.setState({// sets the state to default JSON file if error is returned
+          coins: CoinList
+        })
+      });
   }
   // =================================================================
 
@@ -32,6 +38,11 @@ class App extends Component {
   
   render() {
     
+    let str = JSON.stringify(this.state.coins);
+    str = JSON.stringify(this.state.coins, null, 4); // (Optional) beautiful indented output.
+    console.log(str); // Logs output to dev tools console.
+    // alert(str);
+
     // coins.forEach(coin=>{
     //   console.log('{id:'+coin.id+', name: '+coin.name+'')
     // })
