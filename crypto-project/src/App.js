@@ -41,9 +41,9 @@ class App extends Component {
   
   render() {
 //CODE TO PRINT ENTIRE OBJECT FROM API CALL====================================================  
-    let str = JSON.stringify(this.state.coins);
-    str = JSON.stringify(this.state.coins, null, 4); // (Optional) beautiful indented output.
-    console.log(str); // Logs output to dev tools console.
+    // let str = JSON.stringify(this.state.coins);
+    // str = JSON.stringify(this.state.coins, null, 4); // (Optional) beautiful indented output.
+    // console.log(str); // Logs output to dev tools console.
     // alert(str);
 // ================================================================================================
 

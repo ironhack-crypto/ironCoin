@@ -1,7 +1,7 @@
 
 .container{
     position: relative; 
-    top: 250px;
+    top: 210px;
     display: flex; 
     justify-content: space-between;
     color: #00d1b2;
@@ -12,6 +12,8 @@
     padding: 50px;
     background-color: #282a36;
     margin: 0 10px;
+    /* transform: scaleX(0); */
+    opacity: 0;
 }
 
 h1{
@@ -25,3 +27,11 @@ h2{
 span{
     color: white;
 }
+/* #name1{
+    margin-left: -10px;
+}
+#name2{
+    position: relative;
+    top:200;
+}
+#name3{} */
