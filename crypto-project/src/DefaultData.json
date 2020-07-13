@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Bitcoin",
-        "symbol": "BtttFF",
+        "symbol": "BTC",
         "slug": "bitcoin",
         "num_market_pairs": 7919,
         "date_added": "2013-04-28T00:00:00.000Z",
