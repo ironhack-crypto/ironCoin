@@ -12,7 +12,7 @@ const Home = (props) => {
     const heroImg = {
         background: `url(${homeImg}) center no-repeat fixed`,
         backgroundColor: '#1b0574',
-        backgroundSize: '210vh',
+        backgroundSize: '240vh',
         width: '100%',
         height: '82vh',
         display: 'flex',

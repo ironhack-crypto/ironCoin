@@ -29,7 +29,7 @@ const Ticker =(props)=>{
         padding: '2vh 0 0 1vw',
         color: 'white',
         width: '100%',
-        height: '57px',
+        height: '65px',
         zIndex: '998'
     }
 
