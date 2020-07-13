@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import CoinList from './DefaultData.json'
+import CoinList from './LastApiData.json'
 import 'bulma/css/bulma.css';
 import Home from './components/home/Home';
 import CoinPage from './components/graphPage/graphPage.js';
@@ -21,7 +21,7 @@ class App extends Component {
   componentDidMount() {
     axios
       .get(// TAKE COMMENT OFF WHEN DEPLOYING AND PUT IN LIVE API!! vvvvv
-        // "https://cors-anywhere.herokuapp.com/https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=16e97361-585c-4270-bb8b-1f2a39fc956a"
+        // "https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=be474ff9-0c14-4391-8ae4-c85c6eabda97"
       ).then(response => {
         this.setState({ //set state to coin list. Data twice because of how the objects are designed in API
           coins: response.data.data
@@ -41,9 +41,9 @@ class App extends Component {
   
   render() {
 //CODE TO PRINT ENTIRE OBJECT FROM API CALL====================================================  
-    // let str = JSON.stringify(this.state.coins);
-    // str = JSON.stringify(this.state.coins, null, 4); // (Optional) beautiful indented output.
-    // console.log(str); // Logs output to dev tools console.
+    let str = JSON.stringify(this.state.coins);
+    str = JSON.stringify(this.state.coins, null, 4); // (Optional) beautiful indented output.
+    console.log(str); // Logs output to dev tools console.
     // alert(str);
 // ================================================================================================
 
