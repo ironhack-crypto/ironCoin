@@ -7,8 +7,12 @@ const CoinPage = (props) => {
 
     //style={{marginBottom: '15px', backgroundColor: 'lightgray'}}
     const[state, setState] = useState({})
-    const displayInfo = () => {
-        
+
+    const animate=()=>{
+        alert('pew')
+    }
+
+    const displayInfo = () => {    
         return props.coins.map((eachCoin) => {
             return (
                 <div key={eachCoin.id} className='box isDark'>
@@ -18,7 +22,7 @@ const CoinPage = (props) => {
                     <h3>Circulating Supply: <span>{eachCoin.circulating_supply}</span></h3>
                     <h3>Total Supply: <span>{eachCoin.total_supply}</span></h3>
                     <h3>Max Supply: <span>{eachCoin.max_supply}</span></h3>
-                    <button onClick={() => setState({...eachCoin})}>More</button>
+                    <button onClick={() => {setState({...eachCoin}); animate()}} >More</button>
                 </div>
             )
         })

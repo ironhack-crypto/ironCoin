@@ -49,7 +49,7 @@ const Ticker =(props)=>{
                 <div key={eachCoin.id} className={'coin'+val} style={{ width: '100%', padding: '0 35px'}}>
                     <Link to='/' className="linkStyle">
                         <h1 style={{color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
-                        <span id={'sp'+val} style={{color: 'lightgrey'}}>({eachCoin.quote.USD.price.toFixed(2)})</span>
+                        <span id={'sp'+val} style={{color: 'lightgrey'}}>{eachCoin.quote.USD.price.toFixed(2)}</span>
                     </Link>
                 </div>                
             )            
@@ -63,7 +63,8 @@ const Ticker =(props)=>{
     const lengthCheck=(name)=>{
         let res=name
         if(res.length>10){
-            res= name.split(' ')[0]+'...';
+            res= name.split(' ')
+            res= res[0] +' ('+ res[1].charAt(0)+')'
         }
         return res
     }
@@ -89,7 +90,7 @@ const Ticker =(props)=>{
         for(let i=0;i<currentGroup.length;i++){
             if(coin[i]) {
                 document.querySelector('.coin'+i+' h1').innerHTML=lengthCheck(coin[i].name)
-                document.querySelector('.coin'+i+' span').innerHTML='('+coin[i].quote.USD.price.toFixed(2)+')'
+                document.querySelector('.coin'+i+' span').innerHTML=coin[i].quote.USD.price.toFixed(2)
             }
         }
     }//end changeSymbol
