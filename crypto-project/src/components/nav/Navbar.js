@@ -5,6 +5,7 @@ import logo from './logo.favicon.jpg';
 import '../components.css';
 import Ticker from '../Ticker';
 
+
 const Navbar = (props) => {
     const coins= props.coins
     const btnStyle={ 

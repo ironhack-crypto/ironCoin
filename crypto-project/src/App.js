@@ -9,7 +9,7 @@ import axios from 'axios';
 import Navbar from './components/nav/Navbar';
 import Contact from './components/contact/Contact';
 import MarketPage from './components/marketPage/MarketPage';
-import { Container, Section } from 'reactbulma';
+import WindowDimensionsProvider from './components/windowDimensionsProvider/index';
 
 class App extends Component {
 
@@ -54,6 +54,7 @@ class App extends Component {
 
 
     return (
+      <WindowDimensionsProvider>
       <div>
             <Navbar coins={this.state.coins} />
               <Switch>
@@ -63,6 +64,7 @@ class App extends Component {
                 <Route path="/contact" render={(props) => <Contact coins={this.state.coins}  {...props} />} />
               </Switch>
       </div>
+      </WindowDimensionsProvider>
     );
   }
 }
