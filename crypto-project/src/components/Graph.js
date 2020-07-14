@@ -3,7 +3,6 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import './components.css';
-import 'bulma/css/bulma.css';
 
 const data = [
   {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Graph from '../Graph';
 import '../components.css';
-import 'bulma/css/bulma.css';
+
 
 const CoinDetail = (props) => {
 

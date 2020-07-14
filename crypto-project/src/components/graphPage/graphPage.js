@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import 'bulma/css/bulma.css';
 import CoinDetail from '../coindetail/CoinDetail';
 import '../components.css';
 
-const CoinPage = (props) => {
+const GraphPage = (props) => {
 
     //style={{marginBottom: '15px', backgroundColor: 'lightgray'}}
     const[state, setState] = useState({})
@@ -39,4 +38,4 @@ const CoinPage = (props) => {
     );
 }
 
-export default CoinPage;
+export default GraphPage;

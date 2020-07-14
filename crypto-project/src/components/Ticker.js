@@ -1,9 +1,8 @@
 import React, { Component, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from './nav/Navbar.js';
 import { TimelineMax, TweenMax, Power3 } from 'gsap';
+import { Nav, Container } from 'reactbulma'
 import './components.css';
-import 'bulma/css/bulma.css';
 
 
 const Ticker =(props)=>{   
@@ -117,13 +116,15 @@ const Ticker =(props)=>{
 
     return (
         <div>
-            <div style={tickerWindow}>
-                <div style={{display: 'inline-flex'}}>
-                    {/* <button onClick={fadeOut}>fade</button> */}
-                    {tickWindow()}
-                    
-                </div>
-            </div>
+            <Nav>
+                <Container fluid>
+                    <div style={tickerWindow}>
+                        <div style={{display: 'inline-flex'}}>
+                            {tickWindow()}
+                        </div>
+                    </div>
+                </Container>
+            </Nav>
         </div>
     );
 
