@@ -3,6 +3,7 @@ import { TimelineMax } from 'gsap';
 import './Contact.css';
 import { Link } from 'react-router-dom';
 import { Button, Control, Field } from 'reactbulma';
+import '../components.css';
 
 
 class Contact extends Component{
