@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom';
 import { TimelineMax, TweenMax, Power3 } from 'gsap';
 import { Nav, Container } from 'reactbulma'
 import './components.css';
+import 'bulma/css/bulma.css';
+import './Ticker.css'
 
 
 const Ticker =(props)=>{   
-// 3 different coin groups. 10 coins each   
+// 3 different coin groups. 10 coins each 
+    // let coins = props.coins.sort((a,b)=>{
+    //     return b.quote.USD.price - a.quote.USD.price;
+    // })
     const coinGroup1= props.coins.filter((each,ind)=>{
         return ind<7
     })
@@ -41,10 +46,10 @@ const Ticker =(props)=>{
     const tickWindow =()=>{
         return currentGroup.map((eachCoin,val)=>{
             return (
-                <div key={eachCoin.id} className={'test'+val} style={{ width: '100%', padding: '0 35px'}}>
-                    <Link to='/' style={{ color: 'inherit', display: 'inline-flex', alignItems: 'baseline', width: '200px', borderBottom: '1px solid #00d1b2'}}>
+                <div key={eachCoin.id} className={'coin'+val} style={{ width: '100%', padding: '0 35px'}}>
+                    <Link to='/' className="linkStyle">
                         <h1 style={{color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
-                        <span id={'sp'+val} style={{color: 'lightgrey'}}>(${eachCoin.quote.USD.price.toFixed(2)})</span>
+                        <span id={'sp'+val} style={{color: 'lightgrey'}}>({eachCoin.quote.USD.price.toFixed(2)})</span>
                     </Link>
                 </div>                
             )            
@@ -58,7 +63,7 @@ const Ticker =(props)=>{
     const lengthCheck=(name)=>{
         let res=name
         if(res.length>10){
-            res= name.split(' ')[0];
+            res= name.split(' ')[0]+'...';
         }
         return res
     }
@@ -83,8 +88,8 @@ const Ticker =(props)=>{
         
         for(let i=0;i<currentGroup.length;i++){
             if(coin[i]) {
-                document.querySelector('.test'+i+' h1').innerHTML=lengthCheck(coin[i].name)
-                document.querySelector('.test'+i+' span').innerHTML='('+coin[i].quote.USD.price.toFixed(2)+')'
+                document.querySelector('.coin'+i+' h1').innerHTML=lengthCheck(coin[i].name)
+                document.querySelector('.coin'+i+' span').innerHTML='('+coin[i].quote.USD.price.toFixed(2)+')'
             }
         }
     }//end changeSymbol
@@ -94,17 +99,17 @@ const Ticker =(props)=>{
     const fadeOut =()=>{
         let tl=new TimelineMax        
 
-        tl.to('.test0',.8,{opacity: 0, x:5})
+        tl.to('.coin0',.8,{opacity: 0, x:5})
         for(let i=1;i<11;i++){
-          tl.to('.test'+i,.5,{opacity: 0, x:5},'-=.2')
+          tl.to('.coin'+i,.5,{opacity: 0, x:5},'-=.2')
         }
 
         
         setTimeout(changeSymbol,3090)//delays function call to change symbols
 
-        tl.to('.test0',.5,{opacity: 1, x:0})
+        tl.to('.coin0',.5,{opacity: 1, x:0})
         for(let i=1;i<11;i++){
-            tl.to('.test'+i,.5,{opacity: 1, x:0},'-=.2')
+            tl.to('.coin'+i,.5,{opacity: 1, x:0},'-=.2')
           }  
         setTimeout(fadeOut,10000) //repeats the fading  
         }//end fadeOut
@@ -116,15 +121,13 @@ const Ticker =(props)=>{
 
     return (
         <div>
-            <Nav>
-                <Container fluid>
-                    <div style={tickerWindow}>
-                        <div style={{display: 'inline-flex'}}>
-                            {tickWindow()}
-                        </div>
-                    </div>
-                </Container>
-            </Nav>
+            <div style={tickerWindow}>
+                <div className='tickWindow'>
+                    {/* <button onClick={fadeOut}>fade</button> */}
+                    {tickWindow()}
+                    
+                </div>
+            </div>
         </div>
     );
 
