@@ -9,24 +9,33 @@ const MarketPage=(props)=>{
 
     let articleCnt=5    
     const displayArticles=()=>{
-            return [...Array(articleCnt).keys()].map((each,val)=>{
+        let cnt=[...Array(articleCnt).keys()]
+        // console.log(cnt)
+        return cnt.map((val)=>{
+            console.log(props.news[val])
                 return(
-                    <div key={props.news[val]?.title} className="articleDiv"><h1>{props.news[val]?.title}</h1><span className="source">Source: {props.news[val]?.source.name} <br/> Date: {props.news[val]?.publishedAt}</span><p className="description">{props.news[val]?.description}<ExternalLink href={props.news[val]?.url}><span className="articleLink">READ MORE</span></ExternalLink></p></div>
+                    <div key={props.news[val]?.title} className="articleDiv"><h1>{props.news[val]?.title}</h1><span className="source">Source: {props.news[val]?.source.name} <br/> Date: {props.news[val]?.publishedAt}</span><p className="description">{props.news[val]?.description}</p><ExternalLink href={props.news[val]?.url}><span className="articleLink">READ MORE</span></ExternalLink></div>
                     )
-                    // console.log("loop: "+val)
             })
         
     }    
 
-    console.log(props.news[0])
-    console.log(props.news[1])
-    console.log(props.news[2])
+    // console.log(props.news[0])
+    // console.log(props.news[1])
+    // console.log(props.news[2])
+    // console.log(props.news[3])
+    // console.log(props.news[4])
+
 
     
     return (
-        <div>
-            <h1 style={{top: '150px', position: 'relative', fontSize: '25px'}}>Heeeerrrrrrooooooooooo!!</h1>            
-            {displayArticles()}
+        <div >
+            <div style={{textAlign: 'center'}}>
+                <h1 style={{top: '150px', position: 'relative', fontSize: '65px'}}>
+                    Latest Headlines 
+                </h1>      
+                {displayArticles()}
+            </div>
         </div>
     );
     

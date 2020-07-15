@@ -3,13 +3,23 @@
     position: absolute;
     margin-top: 200px;
     background-color: lightgrey;
-    width: 50%;
+    /* width: 50%; */
+    padding: 2% 5%;
+    text-align: left;
     
 }
 .source{}
 .description{}
 .articleLink{
     float: right;
+}
+h1{
+    font-size: 25px;
+    color: #00d1b2;
+}
+hr{
+    border: solid grey 1px;
+    /* width: 80%; */
 }
 
 
