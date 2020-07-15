@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import homeImg from './homeImg.png';
 import { Link } from 'react-router-dom';
 import Navbar from './../nav/Navbar.js';
@@ -7,8 +7,11 @@ import Parallax from 'react-rellax';
 import { Button, Content, Control, Field, Heading, Level, Nav, Title } from 'reactbulma';
 import '../components.css';
 import 'bulma/css/bulma.css';
+import regression from 'regression';
+import CoinMultiGraph from '../CoinMultiGraph'
 
 const Home = (props) => {
+    //console.log(props)
     const heroImg = {
         background: `url(${homeImg}) center no-repeat fixed`,
         backgroundColor: '#1b0574',
@@ -19,13 +22,43 @@ const Home = (props) => {
         alignItems: 'center'
     }
 
-    console.log(props[0]?.quote.USD.price * (1 - (props[0]?.quote.USD.percent_change_7d/100)), props[0]?.quote.USD.price, 1 + (props[0]?.quote.USD.percent_change_7d/100))
-    // console.log( props[8])
+
+    const [d, setD] = useState([])
+    const [rd, setRd] = useState([])
+    const [seconds, setSeconds] = useState(0);
+    const [time, setTime] = useState(0)
+    let i = 0;
+    useEffect(() => {
+        const interval = setInterval(() => {
+
+            setSeconds(seconds => seconds + 1);
+            setTime(time => time + 1000);
+
+            setRd((rd) => {
+                let newRd = [...rd]
+                newRd.push([time, Math.random()])
+                return newRd
+            })
+            let result = regression.polynomial(rd, { order: 2 })
+            let price = result.predict(time)[1]
+            setD((d) => {
+                let newD = [...d]
+                newD.push({ name: time, pr: price })
+                return newD
+            })
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [props, d, seconds, time, rd]);
+
+
+
+
+
     const getGraphData = (ind) => {
-        let week = props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_7d/100))
-        let day = props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_24h/100))
-        let hour = props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_1h/100))
-        let curr = Math.floor(props[ind]?.quote.USD.price * 100)/100
+        let week = Math.floor(props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_7d / 100)) * 100) / 100
+        let day = Math.floor(props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_24h / 100)) * 100) / 100
+        let hour = Math.floor(props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_1h / 100)) * 100) / 100
+        let curr = Math.floor(props[ind]?.quote.USD.price * 100) / 100
 
         const data = [
             {
@@ -39,13 +72,44 @@ const Home = (props) => {
             },
             {
                 name: 'Current', pr: curr
-,           }
+                ,
+            }
         ]
         return data
     }
+
+
+    const predictFutureData = (ind) => {
+        console.log(props.models)
+        if (!props?.models[ind]?.predict) {
+            return []
+        }
+        const data = [
+            {
+                name: '1 Week', pr: Math.floor(props.models[ind]?.predict(7)[1])
+            },
+            {
+                name: '24 Hours', pr: Math.floor(props.models[ind]?.predict(6)[1])
+            },
+            {
+                name: '1 Hour', pr: Math.floor(props.models[ind]?.predict(5)[1])
+            }
+        ]
+        return data.reverse()
+    }
+
+
+
+
+
+
+
+
+
+
     // background: linear-gradient( #11999e6e, #11999e6e ), url('./images/undraw_programming_2svr.svg') center no-repeat fixed;
     // backgroundImage: `url(${homeImg})`         #424242
-    console.log(getGraphData())
+    // console.log(getGraphData())
     return (
         <div>
             {/* <Navbar /> */}
@@ -55,7 +119,7 @@ const Home = (props) => {
                     {/* <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p> */}
                 </Parallax>
             </div>
-            <div style={{ backgroundColor: '#282a36', height: '580px'}}>
+            <div style={{ backgroundColor: '#282a36', height: '580px' }}>
                 <br />
                 <div>
                     <Content>
@@ -66,16 +130,37 @@ const Home = (props) => {
                         </Field>
                     </Content>
                 </div>
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', backgroundColor: 'black'}}>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', backgroundColor: 'black' }}>
                     <Level>
                         <Level.Item hasTextCentered>
                             <div>
-                                <Heading style={{ color: 'white' }}>Bitcoin</Heading>
-                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>BTC</Title>
-                                <Graph data={getGraphData(0)} />
+                                <Heading style={{ color: 'white' }}>{props?.coins[0]?.name}</Heading>
+                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[0]?.symbol}</Title>
+                                <CoinMultiGraph marketData={getGraphData(0)} generatedData={d} predictedData={predictFutureData(0)} />
                             </div>
                         </Level.Item>
                         <Level.Item hasTextCentered>
+                            <div>
+                                <Heading style={{ color: 'white' }}>{props?.coins[1]?.name}</Heading>
+                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[1]?.symbol}</Title>
+                                <CoinMultiGraph marketData={getGraphData(1)} generatedData={d} predictedData={predictFutureData(1)} />
+                            </div>
+                        </Level.Item>
+                        <Level.Item hasTextCentered>
+                            <div>
+                                <Heading style={{ color: 'white' }}>{props?.coins[2]?.name}</Heading>
+                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[2]?.symbol}</Title>
+                                <CoinMultiGraph marketData={getGraphData(2)} generatedData={d} predictedData={predictFutureData(2)} />
+                            </div>
+                        </Level.Item>
+                        {/* <Level.Item hasTextCentered>
+                            <div>
+                                <Heading style={{ color: 'white' }}>Bitcoin</Heading>
+                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>BTC</Title>
+                                <Graph data={predictFutureData()} />
+                            </div>
+                        </Level.Item> */}
+                        {/* <Level.Item hasTextCentered>
                             <div>
                                 <Heading style={{ color: 'white' }}>Ethereum</Heading>
                                 <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>ETH</Title>
@@ -88,16 +173,16 @@ const Home = (props) => {
                                 <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>XRP</Title>
                                 <Graph data={getGraphData(2)} />
                             </div>
-                        </Level.Item>
+                        </Level.Item> */}
                     </Level>
                 </div>
-                <div style={{background: '#282a36', padding: '30px', width: '100%' }}>
+                <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
                     <Nav>
                         <Field groupedCentered>
                             <Control>
                                 <Link to="/market">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: '700' }}>Market Overview</Button>
-                                </Link> 
+                                </Link>
                             </Control>
                             <Control>
                                 <Link to="/coin">
