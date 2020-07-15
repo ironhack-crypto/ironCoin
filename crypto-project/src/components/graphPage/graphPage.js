@@ -8,7 +8,7 @@ const GraphPage = (props) => {
     const[state, setState] = useState({})
 
     const animate=()=>{
-        alert('pew')
+        // alert('pew')
     }
 
     const displayInfo = () => {    

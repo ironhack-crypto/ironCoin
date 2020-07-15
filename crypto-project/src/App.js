@@ -62,7 +62,7 @@ class App extends Component {
     modelsList.push(regression.linear([[1, week], [2, day], [3, hour], [4, curr]]))
     this.setState({// sets the state to default JSON file if error is returned
       models: modelsList,
-      coins: list
+      coins: list.sort((a,b)=>{return b.quote.USD.price - a.quote.USD.price})//sorts information
     })
   }
 
