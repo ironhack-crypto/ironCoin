@@ -1,0 +1,21 @@
+
+.articleDiv{
+    position: absolute;
+    margin-top: 200px;
+    background-color: lightgrey;
+    width: 50%;
+    
+}
+.source{}
+.description{}
+.articleLink{
+    float: right;
+}
+
+
+/* return <div className="articleDiv">
+<h1>{news[0].title}</h1>
+<span className="source">{news[0].source.name} {news[0].publishedAt}</span>
+<p className="description">{news[0].description}</p>
+</div>
+} */

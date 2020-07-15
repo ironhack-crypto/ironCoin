@@ -42,7 +42,7 @@ class App extends Component {
       axios
           .get("https://cryptocontrol.io/api/v1/public/news?key=c5c485c15cb0060e490058e0f7d5d3d2").then(response =>{
               this.setState({
-                  news: response
+                  news: response.data
               })
           })
   }
