@@ -9,14 +9,13 @@ const MarketPage=(props)=>{
 
     let articleCnt=5    
     const displayArticles=()=>{
-        if(props.news){
             return [...Array(articleCnt).keys()].map((each,val)=>{
                 return(
-                    <div key={props.news[val].title} className="articleDiv"><h1>{props.news[val].title}</h1><span className="source">Source: {props.news[val].source.name} <br/> Date: {props.news[val].publishedAt}</span><p className="description">{props.news[val].description}<ExternalLink href={props.news[val].url}><span className="articleLink">READ MORE</span></ExternalLink></p></div>
+                    <div key={props.news[val]?.title} className="articleDiv"><h1>{props.news[val]?.title}</h1><span className="source">Source: {props.news[val]?.source.name} <br/> Date: {props.news[val]?.publishedAt}</span><p className="description">{props.news[val]?.description}<ExternalLink href={props.news[val]?.url}><span className="articleLink">READ MORE</span></ExternalLink></p></div>
                     )
-                    console.log("loop: "+val)
+                    // console.log("loop: "+val)
             })
-        }
+        
     }    
 
     console.log(props.news[0])
