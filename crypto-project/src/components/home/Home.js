@@ -10,7 +10,6 @@ import regression from 'regression';
 import CoinMultiGraph from '../CoinMultiGraph'
 
 const Home = (props) => {
-    //console.log(props)
     const heroImg = {
         background: `url(${homeImg}) center no-repeat fixed`,
         backgroundColor: '#1b0574',
@@ -79,7 +78,6 @@ const Home = (props) => {
 
 
     const predictFutureData = (ind) => {
-        console.log(props.models)
         if (!props?.models[ind]?.predict) {
             return []
         }
@@ -108,7 +106,6 @@ const Home = (props) => {
 
     // background: linear-gradient( #11999e6e, #11999e6e ), url('./images/undraw_programming_2svr.svg') center no-repeat fixed;
     // backgroundImage: `url(${homeImg})`         #424242
-    // console.log(getGraphData())
     return (
         <div>
             <div style={heroImg}>
