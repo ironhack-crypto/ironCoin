@@ -4,6 +4,7 @@ import './Contact.css';
 import { Link } from 'react-router-dom';
 import { Button, Control, Field } from 'reactbulma';
 import '../components.css';
+import { ExternalLink } from 'react-external-link';
 
 
 class Contact extends Component{
@@ -33,14 +34,14 @@ class Contact extends Component{
                         <div style={{ paddingTop: '30px' }}>
                         <Field groupedCentered>
                             <Control>
-                                <Link to="github.com/antguts">
+                                <ExternalLink href="https://github.com/antguts">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: 'bold' }}>GITHUB</Button>
-                                </Link> 
+                                </ExternalLink> 
                             </Control>
                             <Control>
-                                <Link to="www.linkedin.com/in/agutilla">
+                                <ExternalLink href="https://linkedin.com/in/agutilla">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: 'bold' }}>LINKEDIN</Button>
-                                </Link>
+                                </ExternalLink>
                             </Control>
                         </Field>
                         </div>
@@ -54,14 +55,14 @@ class Contact extends Component{
                         <div style={{ paddingTop: '30px' }}>
                         <Field groupedCentered>
                             <Control>
-                                <Link to="github.com/SchipDev">
+                                <ExternalLink href="https://github.com/SchipDev">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: 'bold' }}>GITHUB</Button>
-                                </Link> 
+                                </ExternalLink> 
                             </Control>
                             <Control>
-                                <Link to="www.linkedin.com/in/shane-schipper">
+                                <ExternalLink href="https://linkedin.com/in/shane-schipper">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: 'bold' }}>LINKEDIN</Button>
-                                </Link>
+                                </ExternalLink>
                             </Control>
                         </Field>
                         </div>              
@@ -75,14 +76,14 @@ class Contact extends Component{
                         <div style={{ paddingTop: '30px' }}>
                         <Field groupedCentered>
                             <Control>
-                                <Link to="github.com/killshot13">
+                                <ExternalLink href="https://github.com/killshot13">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: 'bold' }}>GITHUB</Button>
-                                </Link> 
+                                </ExternalLink> 
                             </Control>
                             <Control>
-                                <Link to="www.linkedin.com/in/dmrehnert">
+                                <ExternalLink href="https://linkedin.com/in/dmrehnert">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: 'bold' }}>LINKEDIN</Button>
-                                </Link>
+                                </ExternalLink>
                             </Control>
                         </Field>                    
                         </div>
