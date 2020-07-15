@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bulma": "^0.9.0",
+    "crypto-news-api": "^2.2.2",
     "font-awesome": "^4.7.0",
     "gsap": "^3.4.0",
     "moment": "^2.27.0",

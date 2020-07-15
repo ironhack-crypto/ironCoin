@@ -101,15 +101,15 @@ const Ticker =(props)=>{
         let tl=new TimelineMax        
 
         tl.to('.coin0',.8,{opacity: 0, x:5})
-        for(let i=1;i<11;i++){
+        for(let i=1;i<7;i++){
           tl.to('.coin'+i,.5,{opacity: 0, x:5},'-=.2')
         }
 
         
-        setTimeout(changeSymbol,3090)//delays function call to change symbols
+        setTimeout(changeSymbol,2610)//delays function call to change symbols
 
         tl.to('.coin0',.5,{opacity: 1, x:0})
-        for(let i=1;i<11;i++){
+        for(let i=1;i<7;i++){
             tl.to('.coin'+i,.5,{opacity: 1, x:0},'-=.2')
           }  
         setTimeout(fadeOut,10000) //repeats the fading  

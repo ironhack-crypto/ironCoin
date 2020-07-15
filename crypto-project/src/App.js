@@ -15,6 +15,7 @@ import WindowDimensionsProvider from './components/windowDimensionsProvider/inde
 class App extends Component {
 
   state = {
+    news: [],
     coins: [], 
     models: []
   }
@@ -37,6 +38,13 @@ class App extends Component {
         this.generateModel(1, CoinList)
         this.generateModel(2, CoinList)
       });
+
+      axios
+          .get("https://cryptocontrol.io/api/v1/public/news?key=c5c485c15cb0060e490058e0f7d5d3d2").then(response =>{
+              this.setState({
+                  news: response
+              })
+          })
   }
   // =================================================================
   generateModel = (ind, list) => {
@@ -83,7 +91,7 @@ class App extends Component {
         <Navbar coins={this.state.coins} />
         <Switch>
           <Route exact path="/" render={(props) => <Home coins={this.state.coins} models={this.state.models} {...this.state.coins} />} />
-          <Route exact path="/market" render={(props) => <MarketPage coins={this.state.coins} {...props} />} />
+          <Route exact path="/market" render={(props) => <MarketPage news={this.state.news} {...props} />} />
           <Route path="/coin" render={(props) => <GraphPage coins={this.state.coins} {...props} />} />
           <Route path="/contact" render={(props) => <Contact coins={this.state.coins}  {...props} />} />
         </Switch>
