@@ -5,7 +5,6 @@ import Graph from '../Graph';
 import Parallax from 'react-rellax';
 import { Button, Container, Content, Control, Field, Heading, Level, Nav, Section, Title } from 'reactbulma';
 import '../components.css';
-import 'bulma/css/bulma.css';
 import regression from 'regression';
 import CoinMultiGraph from '../CoinMultiGraph'
 
@@ -182,7 +181,7 @@ const Home = (props) => {
                                 </Link>
                             </Control>
                             <Control>
-                                <Link to="/coin">
+                                <Link to="/graph">
                                     <Button primary style={{ fontFamily: 'Dosis', color: 'darkViolet', fontWeight: '700' }}>Graph Analysis</Button>
                                 </Link>
                             </Control>

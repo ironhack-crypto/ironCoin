@@ -4,13 +4,11 @@ import './App.css';
 import CoinList from './LastApiData.json';
 import Home from './components/home/Home';
 import GraphPage from './components/graphPage/graphPage.js';
-import Ticker from './components/Ticker';
 import axios from 'axios';
 import Navbar from './components/nav/Navbar';
 import Contact from './components/contact/Contact'
 import MarketPage from './components/marketPage/MarketPage'
 import regression from 'regression';
-import WindowDimensionsProvider from './components/windowDimensionsProvider/index';
 
 class App extends Component {
 
