@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-import 'bulma/css/bulma.css'
-import { Link, Switch, Route } from 'react-router-dom';
-import CoinDetail from '../coindetail/CoinDetail'
+import React from 'react';
 import '../components.css';
 
 const MarketPage =()=>{

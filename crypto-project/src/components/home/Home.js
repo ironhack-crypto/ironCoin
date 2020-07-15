@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import homeImg from './homeImg.png';
 import { Link } from 'react-router-dom';
-import Navbar from './../nav/Navbar.js';
 import Graph from '../Graph';
 import Parallax from 'react-rellax';
-import { Button, Content, Control, Field, Heading, Level, Nav, Title } from 'reactbulma';
+import { Button, Container, Content, Control, Field, Heading, Level, Nav, Section, Title } from 'reactbulma';
 import '../components.css';
 import 'bulma/css/bulma.css';
 import regression from 'regression';
@@ -17,7 +16,7 @@ const Home = (props) => {
         backgroundColor: '#1b0574',
         backgroundSize: '240vh',
         width: '100%',
-        height: '82vh',
+        height: '70vh',
         display: 'flex',
         alignItems: 'center'
     }
@@ -112,12 +111,13 @@ const Home = (props) => {
     // console.log(getGraphData())
     return (
         <div>
-            {/* <Navbar /> */}
             <div style={heroImg}>
+                <Section>
+                <Container>
                 <Parallax speed={11}>
-                    {/* <Ticker coins={props.coins}/> */}
-                    {/* <p style={{ fontSize: '30px', color: 'blueviolet', backgroundColor: 'rgba(0,0,0,0.6)', width: '30vh', textAlign: 'center', marginLeft: '10vw' }}>Hack Your Crypto Portfolio</p> */}
                 </Parallax>
+                </Container>
+                </Section>
             </div>
             <div style={{ backgroundColor: '#282a36', height: '580px' }}>
                 <br />

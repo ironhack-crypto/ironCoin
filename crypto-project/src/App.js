@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import CoinList from './LastApiData.json'
-import 'bulma/css/bulma.css';
+import CoinList from './LastApiData.json';
 import Home from './components/home/Home';
-import CoinPage from './components/graphPage/graphPage.js';
+import GraphPage from './components/graphPage/graphPage.js';
 import Ticker from './components/Ticker';
 import axios from 'axios';
 import Navbar from './components/nav/Navbar';
 import Contact from './components/contact/Contact'
 import MarketPage from './components/marketPage/MarketPage'
 import regression from 'regression';
+import WindowDimensionsProvider from './components/windowDimensionsProvider/index';
 
 class App extends Component {
 
@@ -89,6 +89,7 @@ class App extends Component {
           <Route path="/contact" render={(props) => <Contact coins={this.state.coins}  {...props} />} />
         </Switch>
       </div>
+      </WindowDimensionsProvider>
     );
   }
 }
