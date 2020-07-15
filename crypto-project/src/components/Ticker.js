@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { TimelineMax, TweenMax, Power3 } from 'gsap';
 import { Nav, Container } from 'reactbulma'
 import './components.css';
-import 'bulma/css/bulma.css';
 import './Ticker.css'
 
 
