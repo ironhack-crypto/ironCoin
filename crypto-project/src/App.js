@@ -26,6 +26,8 @@ class App extends Component {
         // "https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=be474ff9-0c14-4391-8ae4-c85c6eabda97"
       ).then(response => {
         this.generateModel(0, response.data.data)
+        this.generateModel(1, response.data.data)
+        this.generateModel(2, response.data.data)
         // this.setState({ //set state to coin list. Data twice because of how the objects are designed in API
         //   coins: response.data.data,
         // })//end setstate
@@ -37,12 +39,11 @@ class App extends Component {
       });
   }
   // =================================================================
-  generateModel = (ind, CoinList) => {
-    let week = CoinList[ind]?.quote.USD.price * (1 - (CoinList[ind]?.quote.USD.percent_change_7d / 100))
-    let day = CoinList[ind]?.quote.USD.price * (1 - (CoinList[ind]?.quote.USD.percent_change_24h / 100))
-    let hour = CoinList[ind]?.quote.USD.price * (1 - (CoinList[ind]?.quote.USD.percent_change_1h / 100))
-    let curr = Math.floor(CoinList[ind]?.quote.USD.price * 100) / 100
-    let name = CoinList[ind].name
+  generateModel = (ind, list) => {
+    let week = CoinList[ind]?.quote.USD.price * (1 - (list[ind]?.quote.USD.percent_change_7d / 100))
+    let day = CoinList[ind]?.quote.USD.price * (1 - (list[ind]?.quote.USD.percent_change_24h / 100))
+    let hour = CoinList[ind]?.quote.USD.price * (1 - (list[ind]?.quote.USD.percent_change_1h / 100))
+    let curr = Math.floor(list[ind]?.quote.USD.price * 100) / 100
     let data = []
     let msInWeek = 60 * 60 * 24 * 7 * 1000;
     let msInDay = msInWeek / 7;
@@ -58,12 +59,10 @@ class App extends Component {
 
     data.push([msInWeek + msInDay + msInHour + 1000, curr])
     let modelsList = [...this.state.models]
-    console.log(regression.polynomial([[1, week], [2, day], [3, hour], [4, curr]], { order: 4 }))
-    modelsList.push(regression.polynomial([[1, week], [2, day], [3, hour], [4, curr]], { order: 4 }))
-    //const result = { [name]: regression.polynomial([[1, week], [2, day], [3, hour], [4, curr]], { order: 4 }) }; //1 week ago needs to be many points, but one hour is less seconds
+    modelsList.push(regression.linear([[1, week], [2, day], [3, hour], [4, curr]]))
     this.setState({// sets the state to default JSON file if error is returned
       models: modelsList,
-      coins: CoinList
+      coins: list.sort((a,b)=>{return b.quote.USD.price - a.quote.USD.price})//sorts information
     })
   }
 
