@@ -37,12 +37,14 @@ class App extends Component {
       });
   }
   // =================================================================
-  generateModel = (ind, CoinList) => {
-    let week = CoinList[ind]?.quote.USD.price * (1 - (CoinList[ind]?.quote.USD.percent_change_7d / 100))
-    let day = CoinList[ind]?.quote.USD.price * (1 - (CoinList[ind]?.quote.USD.percent_change_24h / 100))
-    let hour = CoinList[ind]?.quote.USD.price * (1 - (CoinList[ind]?.quote.USD.percent_change_1h / 100))
-    let curr = Math.floor(CoinList[ind]?.quote.USD.price * 100) / 100
-    let name = CoinList[ind].name
+  generateModel = (ind, coins) => {
+    coins=coins.sort((a,b)=>{return b.quote.USD.price - a.quote.USD.price})
+
+    let week = coins[ind]?.quote.USD.price * (1 - (coins[ind]?.quote.USD.percent_change_7d / 100))
+    let day = coins[ind]?.quote.USD.price * (1 - (coins[ind]?.quote.USD.percent_change_24h / 100))
+    let hour = coins[ind]?.quote.USD.price * (1 - (coins[ind]?.quote.USD.percent_change_1h / 100))
+    let curr = Math.floor(coins[ind]?.quote.USD.price * 100) / 100
+    let name = coins[ind].name
     let data = []
     let msInWeek = 60 * 60 * 24 * 7 * 1000;
     let msInDay = msInWeek / 7;
@@ -63,7 +65,7 @@ class App extends Component {
     //const result = { [name]: regression.polynomial([[1, week], [2, day], [3, hour], [4, curr]], { order: 4 }) }; //1 week ago needs to be many points, but one hour is less seconds
     this.setState({// sets the state to default JSON file if error is returned
       models: modelsList,
-      coins: CoinList
+      coins: coins
     })
   }
 
