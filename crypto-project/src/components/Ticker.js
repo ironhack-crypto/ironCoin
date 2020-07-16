@@ -16,13 +16,13 @@ const Ticker =(props)=>{
     //     return b.quote.USD.price - a.quote.USD.price;
     // })
     const coinGroup1= props.coins.filter((each,ind)=>{
-        return ind<7
+        return ind<6
     })
     const coinGroup2= props.coins.filter((each,ind)=>{
-        return ind<=13 && ind>=7
+        return ind<=11 && ind>=6
     })
     const coinGroup3= props.coins.filter((each,ind)=>{
-        return ind<=20 && ind>=14
+        return ind<=17 && ind>=12
     })
 
     let currentGroup=coinGroup1
@@ -33,8 +33,8 @@ const Ticker =(props)=>{
         return currentGroup.map((eachCoin,val)=>{
             return (
                 <div key={eachCoin.id} className={'coin'+val} style={{ width: 'relative', padding: '0 35px'}}>
-                    <Link to='/' style={{ display: 'inlineFlex', alignItems: 'baseline', width: 'relative', borderBottom: '1px solid #00d1b2' }}>
-                        <h1 style={{ width: 'relative', fontFamily: 'Dosis', color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>
+                    <Link to='/' style={{ display: 'flex', alignItems: 'baseline', width: 'relative', borderBottom: '1px solid #00d1b2' }}>
+                        <h1 style={{ width: 'relative', fontFamily: 'Dosis', color:'#00d1b2', fontSize: '15px', paddingRight: '20px'}}>
                             <Level.Item hastextcentered="true">
                                 {eachCoin.symbol}
                             </Level.Item>
@@ -51,9 +51,9 @@ const Ticker =(props)=>{
     //Shortens name length if over 10 char
     const lengthCheck=(name)=>{
         let res=name
-        if(res.length>10){
+        if(res.length>9){
             res= name.split(' ')
-            res= res[0] +' ('+ res[1].charAt(0)+')'
+            res= res[0] +'('+ res[1].charAt(0)+')'
         }
         return res
     }
@@ -90,15 +90,15 @@ const Ticker =(props)=>{
         let tl=new TimelineMax        
 
         tl.to('.coin0',.8,{opacity: 0, x:5})
-        for(let i=1;i<7;i++){
+        for(let i=1;i<9;i++){
           tl.to('.coin'+i,.5,{opacity: 0, x:5},'-=.2')
         }
 
         
-        setTimeout(changeSymbol,2610)//delays function call to change symbols
+        setTimeout(changeSymbol,2490)//delays function call to change symbols
 
         tl.to('.coin0',.5,{opacity: 1, x:0})
-        for(let i=1;i<7;i++){
+        for(let i=1;i<9;i++){
             tl.to('.coin'+i,.5,{opacity: 1, x:0},'-=.2')
           }  
         setTimeout(fadeOut,10000) //repeats the fading  
