@@ -10,31 +10,31 @@ const Navbar = (props) => {
     const coins= props.coins
 
     return (
-    <div style={{ position: 'fixed', width: '100%', backgroundColor: '#282a36', padding: '10px 20px' }}>
-        <Nav hasShadow>
-            <Container isFluid>
+    <div style={{ width: '100%', backgroundColor: '#282a36', padding: '10px 20px' }}>
+        <Nav hasshadow="true">
+            <Container isfluid="true">
             <Level>
-                <Level.Item hasTextCentered>
+                <Level.Item hastextcentered="true">
                     <Link to="/" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
                         <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Home</Button>
                     </Link>
                 </Level.Item>
-                <Level.Item hasTextCentered>
+                <Level.Item hastextcentered="true">
                     <Link to="/market" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
                         <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Market</Button>
                     </Link>
                 </Level.Item>
-                <Level.Item hasTextCentered>
+                <Level.Item hastextcentered="true">
                         <Link to="/">
                             <Image is="32x32" src={logo} alt="" />
                         </Link>
                 </Level.Item>
-                <Level.Item hasTextCentered>
+                <Level.Item hastextcentered="true">
                     <Link to="/graph" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
                         <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Graphs</Button>
                     </Link>
                 </Level.Item>
-                <Level.Item hasTextCentered>
+                <Level.Item hastextcentered="true">
                     <Link to="/contact" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
                         <Button info focused  style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Contact</Button>
                     </Link>
