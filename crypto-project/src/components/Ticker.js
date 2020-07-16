@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { TimelineMax, TweenMax, Power3 } from 'gsap';
 import { Nav, Container, Level } from 'reactbulma';
 import './components.css';
+import { gsap } from 'gsap'
+import { CSSPlugin } from 'gsap/CSSPlugin'
+
+gsap.registerPlugin(CSSPlugin)
+
 
 
 const Ticker =(props)=>{   

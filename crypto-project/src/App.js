@@ -9,6 +9,10 @@ import Navbar from './components/nav/Navbar';
 import Contact from './components/contact/Contact'
 import MarketPage from './components/marketPage/MarketPage'
 import regression from 'regression';
+import { gsap } from 'gsap'
+import { CSSPlugin } from 'gsap/CSSPlugin'
+
+gsap.registerPlugin(CSSPlugin)
 
 class App extends Component {
 

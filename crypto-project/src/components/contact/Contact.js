@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 import { Button, Control, Field } from 'reactbulma';
 import '../components.css';
 import { ExternalLink } from 'react-external-link';
+import { gsap } from 'gsap'
+import { CSSPlugin } from 'gsap/CSSPlugin'
 
+gsap.registerPlugin(CSSPlugin)
 
 class Contact extends Component{
 
