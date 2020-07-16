@@ -90,7 +90,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={(props) => <Home coins={this.state.coins} models={this.state.models} {...this.state.coins} />} />
           <Route exact path="/market" render={(props) => <MarketPage news={this.state.news} {...props} />} />
-          <Route path="/coin" render={(props) => <GraphPage coins={this.state.coins} {...props} />} />
+          <Route path="/graph" render={(props) => <GraphPage coins={this.state.coins} {...props} />} />
           <Route path="/contact" render={(props) => <Contact coins={this.state.coins}  {...props} />} />
         </Switch>
       </div>

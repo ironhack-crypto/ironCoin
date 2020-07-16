@@ -30,7 +30,7 @@ const Ticker =(props)=>{
                 <div key={eachCoin.id} className={'coin'+val} style={{ width: 'relative', padding: '0 35px'}}>
                     <Link to='/' style={{ display: 'inlineFlex', alignItems: 'baseline', width: 'relative', borderBottom: '1px solid #00d1b2' }}>
                         <h1 style={{ width: 'relative', fontFamily: 'Dosis', color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>
-                            <Level.Item hasTextCentered>
+                            <Level.Item hastextcentered="true">
                                 {eachCoin.symbol}
                             </Level.Item>
                         </h1>
@@ -105,9 +105,9 @@ const Ticker =(props)=>{
 // ========================================================================================
 
     return (
-        <div style={{ textAlign: 'center', backgroundColor: '#282a36', position: 'relative', padding: '2vh 0 0 1vw', width: 'relative', height: '65px', zIndex: '998' }}>
-            <Nav hasShadow>
-                <Container isFluid>
+        <div style={{ textAlign: 'center', backgroundColor: '#282a36', position: 'relative', padding: '2vh 0 0 1vw', width: '100%', height: '65px' }}>
+            <Nav hasshadow="true">
+                <Container isfluid="true">
                     <div className='tickWindow' style={{ backgroundColor: '#282a36' }}>
                         <Level>
                             {tickWindow()}
