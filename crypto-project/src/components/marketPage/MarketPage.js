@@ -9,32 +9,28 @@ const MarketPage=(props)=>{
 
     let articleCnt=5    
     const displayArticles=()=>{
+        console.log(props.news.slice(0,5))
         let cnt=[...Array(articleCnt).keys()]
         // console.log(cnt)
-        return cnt.map((val)=>{
-            console.log(props.news[val])
-                return(
-                    <div key={props.news[val]?.title} className="articleDiv"><h1>{props.news[val]?.title}</h1><span className="source">Source: {props.news[val]?.source.name} <br/> Date: {props.news[val]?.publishedAt}</span><p className="description">{props.news[val]?.description}</p><ExternalLink href={props.news[val]?.url}><span className="articleLink">READ MORE</span></ExternalLink></div>
+        return props.news.slice(0,5).map((val)=>{
+                return(    
+                    <div key={val?.title} className="articleDiv"><h1>{val?.title}</h1><p className="description">{val?.description}</p><ExternalLink href={val?.url} style={{color: 'cyan'}}><span className="articleLink">READ MORE</span></ExternalLink><span className="source">Source: {val?.source.name} </span>
+                    </div>
                     )
             })
         
     }    
 
-    // console.log(props.news[0])
-    // console.log(props.news[1])
-    // console.log(props.news[2])
-    // console.log(props.news[3])
-    // console.log(props.news[4])
-
-
     
     return (
         <div >
             <div style={{textAlign: 'center'}}>
-                <h1 style={{top: '150px', position: 'relative', fontSize: '65px'}}>
+                <h1 className='latest'>
                     Latest Headlines 
-                </h1>      
-                {displayArticles()}
+                </h1> 
+                <div className="articles">
+                    {displayArticles()}
+                </div>     
             </div>
         </div>
     );

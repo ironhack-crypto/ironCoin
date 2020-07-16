@@ -10,7 +10,7 @@ const Navbar = (props) => {
     const coins= props.coins
 
     return (
-    <div style={{ position: 'fixed', width: '100%', backgroundColor: '#282a36', padding: '10px 20px' }}>
+    <div style={{ position: 'fixed', width: '100%', backgroundColor: '#282a36', padding: '10px 20px', zIndex: '999' }}>
         <Nav hasShadow>
             <Container isFluid>
             <Level>

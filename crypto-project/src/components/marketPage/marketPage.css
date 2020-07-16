@@ -1,14 +1,29 @@
 
+.articles{
+    /* display: flex; */
+    background-color: #4600a5;
+    width: 100%;
+    position: absolute; 
+    padding-top: 200px;
+    align: center;
+}
+
+
 .articleDiv{
-    position: absolute;
-    margin-top: 200px;
-    background-color: lightgrey;
-    /* width: 50%; */
-    padding: 2% 5%;
+    background-color: rgb(106, 108, 119);
+    color: white;
+    width: 75%;
+    margin: 0 14% 20px;
+    padding: 1% 5% 3%;
     text-align: left;
     
 }
-.source{}
+.source{
+    font-style: italic;
+    margin-top: 15px;
+    float: left;
+    color: white;
+}
 .description{}
 .articleLink{
     float: right;
@@ -16,6 +31,15 @@
 h1{
     font-size: 25px;
     color: #00d1b2;
+}
+
+.latest{
+    position: relative;
+    /* width: ; */
+    top: 150px;
+    font-size: 65px;
+    z-index: 997;
+    /* border-bottom: 5px outset #00d1b2; */
 }
 hr{
     border: solid grey 1px;
