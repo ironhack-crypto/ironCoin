@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Container, Level, Media, Nav, Section } from 'reactbulma';
+import { Button, Container, Image, Level, Nav } from 'reactbulma';
 import logo from './logo.favicon.jpg';
 import '../components.css';
 import Ticker from '../Ticker';
@@ -8,58 +8,40 @@ import Ticker from '../Ticker';
 
 const Navbar = (props) => {
     const coins= props.coins
-    const btnStyle={ 
-        fontFamily: 'Dosis',
-        width: '80%',
-        backgroundColor: '#00d1b2',
-        color: 'darkviolet',
-        fontWeight: 'bold',
-        letterSpacing: '7px'
-    };
-    const divStyle={
-        position: "fixed",
-        top: "0",
-        width: "100%",
-        height: "120px",
-        backgroundColor: "#282a36",
-        borderBottom: `1px solid black`,
-        fontWeight: "bold",
-        padding: "10px 20px",
-    };
 
     return (
-    <div style={divStyle}>
-        <Nav>
+    <div style={{ position: 'fixed', width: '100%', backgroundColor: '#282a36', padding: '10px 20px' }}>
+        <Nav hasShadow>
+            <Container isFluid>
             <Level>
                 <Level.Item hasTextCentered>
-                    <Link to="/"  style={btnStyle}>
-                        <Button info style={btnStyle}>Home</Button>
+                    <Link to="/" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
+                        <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Home</Button>
                     </Link>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Link to="/market" style={btnStyle}>
-                        <Button info style={btnStyle}>Market</Button>
+                    <Link to="/market" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
+                        <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Market</Button>
                     </Link>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Media>
                         <Link to="/">
-                            <img src={logo} style={{height: '40px'}} />
+                            <Image is="32x32" src={logo} alt="" />
                         </Link>
-                    </Media>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Link to="/graph" style={btnStyle}>
-                        <Button info style={btnStyle}>Graphs</Button>
+                    <Link to="/graph" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
+                        <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Graphs</Button>
                     </Link>
                 </Level.Item>
                 <Level.Item hasTextCentered>
-                    <Link to="/contact" style={btnStyle}>
-                        <Button info style={btnStyle}>Contact</Button>
+                    <Link to="/contact" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
+                        <Button info focused  style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Contact</Button>
                     </Link>
                 </Level.Item>
             </Level>
-        </Nav>
+            </Container>
+        </Nav>      
         <Ticker coins={coins}/>
     </div>
     );

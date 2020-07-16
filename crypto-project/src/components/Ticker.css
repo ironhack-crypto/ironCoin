@@ -2,21 +2,6 @@
     display: inline-flex;
 }
 
-.linkStyle{ 
-    color: inherit;
-    display: inline-flex; 
-    align-items: baseline;
-    width: 200px;
-    border-bottom: 1px solid #00d1b2;
-}
 
 
-@media(max-width: 421px){
-    .tickWindow{
-        margin-left: 9%;
-    }
-    .coin0 > .linkStyle{
-        margin-right: 200px;
-    }
 
-}

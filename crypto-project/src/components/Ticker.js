@@ -24,38 +24,20 @@ const Ticker =(props)=>{
     let currentGroup=coinGroup1
 
 
-//STYLES===================================================================================
-    const tickerWindow={
-        textAlign: 'center',
-        backgroundColor: '#282a36',
-        position: 'reletive',
-        padding: '2vh 0 0 1vw',
-        color: 'white',
-        width: '100%',
-        height: '65px',
-        zIndex: '998'
-    }
-
-
 //===========================================================================================
-
-
-
-
     const tickWindow =()=>{
         return currentGroup.map((eachCoin,val)=>{
             return (
-                <div key={eachCoin.id} className={'coin'+val} style={{ width: '100%', padding: '0 35px'}}>
-                    <Link to='/' className="linkStyle">
-                        <h1 style={{color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
-                        <span id={'sp'+val} style={{color: 'lightgrey'}}>{eachCoin.quote.USD.price.toFixed(2)}</span>
+                <div key={eachCoin.id} className={'coin'+val} style={{ width: 'relative', padding: '0 35px'}}>
+                    <Link to='/' style={{ display: 'inlineFlex', alignItems: 'baseline', width: 'relative', borderBottom: '1px solid #00d1b2' }}>
+                        <h1 style={{ width: 'relative', fontFamily: 'Dosis', color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
+                        <span id={'sp'+val} style={{ width: 'relative', color: 'gainsboro' }}>{eachCoin.quote.USD.price.toFixed(2)}</span>
                     </Link>
                 </div>                
             )            
         })        
     }//end tickWindow
 
-    
 
 //GSAP animations==============================================================
     //Shortens name length if over 10 char
@@ -120,13 +102,9 @@ const Ticker =(props)=>{
 // ========================================================================================
 
     return (
-        <div>
-            <div style={tickerWindow}>
-                <div className='tickWindow'>
-                    {/* <button onClick={fadeOut}>fade</button> */}
-                    {tickWindow()}
-                    
-                </div>
+        <div style={{ textAlign: 'center', backgroundColor: '#282a36', position: 'relative', padding: '2vh 0 0 1vw', width: 'relative', height: '65px', zIndex: '998' }}>
+            <div className='tickWindow'>
+                {tickWindow()}
             </div>
         </div>
     );
