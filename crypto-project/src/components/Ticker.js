@@ -16,13 +16,13 @@ const Ticker =(props)=>{
     //     return b.quote.USD.price - a.quote.USD.price;
     // })
     const coinGroup1= props.coins.filter((each,ind)=>{
-        return ind<7
+        return ind<6
     })
     const coinGroup2= props.coins.filter((each,ind)=>{
-        return ind<=13 && ind>=7
+        return ind<=11 && ind>=6
     })
     const coinGroup3= props.coins.filter((each,ind)=>{
-        return ind<=20 && ind>=14
+        return ind<=17 && ind>=12
     })
 
     let currentGroup=coinGroup1
