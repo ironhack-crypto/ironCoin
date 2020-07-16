@@ -1,9 +1,8 @@
 import React, { Component, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TimelineMax, TweenMax, Power3 } from 'gsap';
-import { Nav, Container } from 'reactbulma'
+import { Nav, Container, Level } from 'reactbulma';
 import './components.css';
-import './Ticker.css'
 
 
 const Ticker =(props)=>{   
@@ -30,11 +29,15 @@ const Ticker =(props)=>{
             return (
                 <div key={eachCoin.id} className={'coin'+val} style={{ width: 'relative', padding: '0 35px'}}>
                     <Link to='/' style={{ display: 'inlineFlex', alignItems: 'baseline', width: 'relative', borderBottom: '1px solid #00d1b2' }}>
-                        <h1 style={{ width: 'relative', fontFamily: 'Dosis', color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>{eachCoin.symbol}</h1>
+                        <h1 style={{ width: 'relative', fontFamily: 'Dosis', color:'#00d1b2', fontSize: '20px', paddingRight: '20px'}}>
+                            <Level.Item hasTextCentered>
+                                {eachCoin.symbol}
+                            </Level.Item>
+                        </h1>
                         <span id={'sp'+val} style={{ width: 'relative', color: 'gainsboro' }}>{eachCoin.quote.USD.price.toFixed(2)}</span>
                     </Link>
-                </div>                
-            )            
+                </div>               
+            )          
         })        
     }//end tickWindow
 
@@ -103,9 +106,15 @@ const Ticker =(props)=>{
 
     return (
         <div style={{ textAlign: 'center', backgroundColor: '#282a36', position: 'relative', padding: '2vh 0 0 1vw', width: 'relative', height: '65px', zIndex: '998' }}>
-            <div className='tickWindow'>
-                {tickWindow()}
-            </div>
+            <Nav hasShadow>
+                <Container isFluid>
+                    <div className='tickWindow' style={{ backgroundColor: '#282a36' }}>
+                        <Level>
+                            {tickWindow()}
+                        </Level>
+                    </div>
+                </Container>
+            </Nav>          
         </div>
     );
 
