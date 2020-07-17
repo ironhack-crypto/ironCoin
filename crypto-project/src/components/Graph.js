@@ -12,14 +12,13 @@ export default class Graph extends Component {
   render() {
     return (
       <div>
-        <h2 style={{fontFamily: 'Dosis', fontSize: '30px', fontWeight: '700', color: 'blueviolet', textAlign: 'center'}}>{this.props.name}</h2>
         <LineChart
           style={{fontFamily: 'Lato'}}
-          width={450}
+          width={320}
           height={300}
           data={this.props.data}
           padding={{
-            top: '30px', right: '30px', left: '30px', bottom: '10px',
+            top: '30px', right: '30px', left: '30px', bottom: '30px',
           }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
@@ -27,7 +26,6 @@ export default class Graph extends Component {
           <Tooltip />
           <Legend />
           <Line type="monotone" dataKey="pr" stroke="#8884d8" activeDot={{ r: 8 }} />
-          {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
         </LineChart>
       </div>
     );

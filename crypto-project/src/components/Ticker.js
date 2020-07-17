@@ -106,8 +106,8 @@ const Ticker =(props)=>{
 
     return (
         <div style={{ textAlign: 'center', backgroundColor: '#282a36', position: 'relative', padding: '2vh 0 0 1vw', width: '100%', height: '65px' }}>
-            <Nav hasshadow="true">
-                <Container isfluid="true">
+            <Nav hasShadow>
+                <Container fluid>
                     <div className='tickWindow' style={{ backgroundColor: '#282a36' }}>
                         <Level>
                             {tickWindow()}
