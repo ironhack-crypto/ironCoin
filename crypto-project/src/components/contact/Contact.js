@@ -7,7 +7,10 @@ import { ExternalLink } from 'react-external-link';
 import logo from './logo.favicon.jpg';
 import { Button, Control, Container, Field, Image, Level, Nav } from 'reactbulma';
 
+import { gsap } from 'gsap'
+import { CSSPlugin } from 'gsap/CSSPlugin'
 
+gsap.registerPlugin(CSSPlugin)
 
 class Contact extends Component{
 

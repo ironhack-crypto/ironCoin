@@ -11,9 +11,10 @@
 
 .articleDiv{
     background-color: rgb(106, 108, 119);
+    box-shadow: 10px 6px 5px #00d1b2;
     color: white;
     width: 75%;
-    margin: 0 14% 20px;
+    margin: 0 14% 40px;
     padding: 1% 5% 3%;
     text-align: left;
     
@@ -27,6 +28,9 @@
 .description{}
 .articleLink{
     float: right;
+    font-weight: bold;
+    font-size: 18px;
+    color:#0f008c;
 }
 h1{
     font-size: 25px;
@@ -35,6 +39,8 @@ h1{
 
 .latest{
     position: relative;
+    
+    border-bottom: none;
     /* width: ; */
     top: 150px;
     font-size: 65px;
@@ -44,6 +50,11 @@ h1{
 hr{
     border: solid grey 1px;
     /* width: 80%; */
+}
+.title{
+    color: #00d1b2;
+    border-bottom: 1px solid;
+    
 }
 
 

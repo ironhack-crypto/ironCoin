@@ -18,7 +18,6 @@ const Home = (props) => {
     const [rd, setRd] = useState([])
     const [seconds, setSeconds] = useState(0);
     const [time, setTime] = useState(0)
-    let i = 0;
     useEffect(() => {
         const interval = setInterval(() => {
 
@@ -27,7 +26,7 @@ const Home = (props) => {
 
             setRd((rd) => {
                 let newRd = [...rd]
-                newRd.push([time, Math.random()])
+                newRd.push([time-3000, Math.random()])
                 return newRd
             })
             let result = regression.polynomial(rd, { order: 2 })
