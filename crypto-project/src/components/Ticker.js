@@ -110,7 +110,7 @@ const Ticker =(props)=>{
 // ========================================================================================
 
     return (
-        <div style={{ textAlign: 'center', backgroundColor: '#282a36', position: 'relative', padding: '2vh 0 0 1vw', width: '100%', height: '65px' }}>
+        <div style={{ textAlign: 'center', backgroundColor: '#282a36', position: 'relative', padding: '2vh 0 0 1vw', width: '100%', height: '65px' ,zIndex:998}}>
             <Nav hasShadow>
                 <Container fluid>
                     <div className='tickWindow' style={{ backgroundColor: '#282a36' }}>

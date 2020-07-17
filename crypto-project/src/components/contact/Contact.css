@@ -5,9 +5,9 @@
 }
 
 .contContainer{
-    position: relative;
+    /* position: relative; */
     padding: 50px;
-    top: 140px;
+    top: 75px;
     display: flex; 
     justify-content: space-around;
     color: #00d1b2;

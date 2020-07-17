@@ -32,7 +32,7 @@ const CoinDetail = (props) => {
     console.log(props)
 
     return (
-        <div style={{ backgroundColor: 'indigo', position: 'fixed', top: '0', bottom: '50', left: '0', right: '0', marginLeft: '70vw', marginTop: '20vh' }}>
+        <div style={{ backgroundColor: 'indigo', position: 'fixed', top: '0', bottom: '50', left: '0', right: '0', marginLeft: '70vw', marginTop: '20vh', fontSize: '18px' }}>
             <h1 style={{ fontFamily: 'Dosis', fontSize: '50px', margin: '20px', fontColor: 'black' }}>{props?.name}</h1>
             <Graph style={{ marginLeft: '30px', color: 'white'}} data={plotCoinData()} name={props?.name} />
             <p style={{ color: 'gainsboro' }}>Circulating Supply: {props?.circulating_supply}</p>

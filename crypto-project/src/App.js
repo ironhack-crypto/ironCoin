@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import CoinList from './LastApiData.json';
+import Footer from './components/footer/Footer.js'
 import Home from './components/home/Home';
 import GraphPage from './components/graphPage/graphPage.js';
 import axios from 'axios';
@@ -97,6 +98,7 @@ class App extends Component {
           <Route path="/graph" render={(props) => <GraphPage coins={this.state.coins} {...props} />} />
           <Route path="/contact" render={(props) => <Contact coins={this.state.coins}  {...props} />} />
         </Switch>
+        {/* <Footer /> */}
       </div>
     );
   }

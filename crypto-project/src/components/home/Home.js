@@ -3,6 +3,7 @@ import newHomeImg from './newHomeImg.png';
 import { Link } from 'react-router-dom';
 import Parallax from 'react-rellax';
 import { Button, Card, Container, Content, Control, Field, Heading, Image, Level, Nav, Title } from 'reactbulma';
+import Footer from './../footer/Footer.js'
 import '../components.css';
 import regression from 'regression';
 import CoinMultiGraph from '../CoinMultiGraph';
@@ -78,7 +79,7 @@ const Home = (props) => {
     }
 
     return (
-            <div style={{ height: '500px'}}>
+            <div style={{ height: '500px', marginBottom: '10px'}}>
                 <div style={{ backgroundColor: '#1b0574', height: '100px' }}>
                 </div>
                 <Card>
@@ -122,7 +123,7 @@ const Home = (props) => {
                         </Level>
                     </div>
                     <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
-                    <Nav hasShadow>
+                    {/* <Nav hasShadow>
                     <Container fluid>
                         <Level>
                             <Level.Item hasTextCentered>
@@ -152,7 +153,8 @@ const Home = (props) => {
                             </Level.Item>
                         </Level>
                     </Container>
-                </Nav>  
+                </Nav>   */}
+                <Footer />
             </div>
         </div>
         </Parallax>

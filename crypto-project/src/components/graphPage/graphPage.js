@@ -4,6 +4,7 @@ import '../components.css';
 import { Link } from 'react-router-dom';
 import logo from './logo.favicon.jpg';
 import { Button, Container, Control, Field, Heading, Hero, Image, Level, Nav, SubTitle, Title } from 'reactbulma';
+import Footer from '../footer/Footer';
 
 const GraphPage = (props) => {
 
@@ -68,7 +69,8 @@ const GraphPage = (props) => {
             <CoinDetail {...state}/>
             </div>
             <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
-                    <Nav hasShadow>
+                <Footer />
+                    {/* <Nav hasShadow>
                     <Container fluid>
                         <Level>
                             <Level.Item hasTextCentered>
@@ -98,7 +100,7 @@ const GraphPage = (props) => {
                             </Level.Item>
                         </Level>
                     </Container>
-                </Nav>  
+                </Nav>   */}
             </div>
         </div>
     </div>

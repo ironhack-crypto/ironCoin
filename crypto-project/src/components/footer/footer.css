@@ -1,0 +1,23 @@
+
+ .footerContain{
+     display: flex;
+     justify-content: space-evenly;
+     align-items: unset;
+     position: inherit;
+     margin-top: 20px;
+     bottom: 0vh;
+     background-color: #282a36;
+     padding: 30px 10%;
+     width: 100%;
+     color: cyan;
+     
+    }
+    
+.footerContain p{
+    font-style: italic;
+    margin-bottom: 10px;
+    border-bottom: 2px solid cyan;
+}
+i{
+    color: grey;
+}

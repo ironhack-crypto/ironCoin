@@ -6,9 +6,11 @@ import '../components.css';
 import { ExternalLink } from 'react-external-link';
 import logo from './logo.favicon.jpg';
 import { Button, Control, Container, Field, Image, Level, Nav } from 'reactbulma';
-
 import { gsap } from 'gsap'
 import { CSSPlugin } from 'gsap/CSSPlugin'
+import Footer from '../footer/Footer.js'
+
+
 
 gsap.registerPlugin(CSSPlugin)
 
@@ -96,10 +98,12 @@ class Contact extends Component{
                     </div>
                     
                 </div>
-                
+                <Footer />
             </div>
         </div>
-        <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
+        
+
+        {/* <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
                     <Nav hasShadow>
                     <Container fluid>
                         <Level>
@@ -131,8 +135,8 @@ class Contact extends Component{
                         </Level>
                     </Container>
                 </Nav>  
-            </div>
-
+            </div> */}
+            
         </div>
         
         );
