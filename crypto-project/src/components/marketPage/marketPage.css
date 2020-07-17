@@ -1,4 +1,14 @@
 
+.marketTitle{
+    font-family: Dosis;
+    color: gainsboro;
+}
+
+.subTitle{
+    font-family: Lato; 
+    color:  darkviolet; 
+}
+
 .articles{
     background-color: #1b0574;
     width: 100%;
@@ -9,6 +19,7 @@
 
 
 .articleDiv{
+    display: inline-block;
     background-color: #282a36;
     box-shadow: 10px 6px 5px darkviolet;
     color: gainsboro;
@@ -58,4 +69,17 @@ hr{
     color: #00d1b2;
     border-bottom: 3px 50% solid darkviolet;
     text-align: right;
+}
+
+
+@media(max-width: 444px){
+    a{
+        display: grid;
+    }
+    .articleLink{
+        margin-top: 12px;
+    }
+    .marketTitle{
+        
+    }
 }
