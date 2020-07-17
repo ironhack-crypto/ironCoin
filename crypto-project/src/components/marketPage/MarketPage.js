@@ -27,12 +27,12 @@ const MarketPage=(props)=>{
         return props.news.slice(0,5).map((val)=>{
                 return(    
                     <div key={val?.title} className="articleDiv">
-                    <h1 className="arttitle">{nameLengthCheck(val?.title)}</h1>
-                    <p className="description">{val?.description}</p>
-                    <ExternalLink href={val?.url} style={{color: 'gainsboro'}}>
-                    <span className="articleLink">READ MORE</span>
-                    </ExternalLink>
-                    <span className="source">Source: {val?.source.name} </span>
+                        <h1 className="arttitle">{nameLengthCheck(val?.title)}</h1>
+                        <p className="description">{val?.description}</p>
+                        <ExternalLink href={val?.url} style={{color: 'gainsboro'}}>
+                        <span className="articleLink">READ MORE</span>
+                        </ExternalLink>
+                        <span className="source">Source: {val?.source.name} </span>
                     </div>
                     )
             })
@@ -49,7 +49,7 @@ const MarketPage=(props)=>{
             <Hero medium primary bold style={{ backgroundColor: '#00d1b2'}}>
                 <Hero.Body>
                     <Container>
-                        <Title style={{ fontFamily: 'Dosis', color: 'gainsboro'}}>
+                        <Title className='marketTitle'>
                             Market Overview
                         </Title>
                             <SubTitle style={{ fontFamily: 'Lato', color: 'darkViolet' }}>
