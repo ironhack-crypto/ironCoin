@@ -3,7 +3,6 @@ import '../components.css';
 import './marketPage.css';
 import { ExternalLink } from 'react-external-link';
 import { Container, Hero, Section, SubTitle, Title } from 'reactbulma'
-import Home from '../home/Home';
 
 
 const MarketPage=(props)=>{

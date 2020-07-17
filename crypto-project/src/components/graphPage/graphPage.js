@@ -3,7 +3,7 @@ import CoinDetail from '../coindetail/CoinDetail';
 import '../components.css';
 import { Link } from 'react-router-dom';
 import logo from './logo.favicon.jpg';
-import { Button, Container, Image, Level, Nav } from 'reactbulma';
+import { Button, Container, Control, Field, Heading, Hero, Image, Level, Nav, SubTitle, Title } from 'reactbulma';
 
 const GraphPage = (props) => {
 
@@ -17,14 +17,22 @@ const GraphPage = (props) => {
     const displayInfo = () => {    
         return props.coins.map((eachCoin) => {
             return (
-                <div key={eachCoin.id} className='box isDark'>
-                    <h1>{eachCoin.name} / {eachCoin.symbol}</h1>
-                    <h3>Price: <span>${eachCoin.quote.USD.price.toFixed(2)}</span></h3>
-                    <h3>Last Updated: <span>{eachCoin.last_updated}</span></h3>
-                    <h3>Circulating Supply: <span>{eachCoin.circulating_supply}</span></h3>
-                    <h3>Total Supply: <span>{eachCoin.total_supply}</span></h3>
-                    <h3>Max Supply: <span>{eachCoin.max_supply}</span></h3>
-                    <button onClick={() => {setState({...eachCoin}); animate()}} >More</button>
+                <div key={eachCoin.id}>
+                    <div>
+                        <Title>
+                            <h1 style={{ fontFamily: 'Dosis', height: '5vh', margin: '3%' }}>{eachCoin.name} / {eachCoin.symbol}</h1>
+                        </Title>
+                    </div>
+                    <Heading style={{ color: 'gainsboro', marginLeft: '1%' }}>Price: <span>${eachCoin.quote.USD.price.toFixed(2)}</span></Heading>
+                    <Heading style={{ color: 'gainsboro', marginLeft: '2%' }}>Last Updated: <span>{eachCoin.last_updated}</span></Heading>
+                    <Heading style={{ color: 'gainsboro', marginLeft: '3%' }}>Circulating Supply: <span>{eachCoin.circulating_supply}</span></Heading>
+                    <Heading style={{ color: 'gainsboro', marginLeft: '4%' }}>Total Supply: <span>{eachCoin.total_supply}</span></Heading>
+                    <Heading style={{ color: 'gainsboro', marginLeft: '5%', marginBottom: '3%' }}>Max Supply: <span>{eachCoin.max_supply}</span></Heading>
+                    <Field groupedCentered>
+                        <Control>
+                            <Button info onClick={() => {setState({...eachCoin}); animate()}} >More</Button>
+                        </Control>
+                    </Field> 
                 </div>
             )
         })
@@ -33,10 +41,29 @@ const GraphPage = (props) => {
 
     return (
         <div >
-            <div style={{ display: 'flex' }}>
+        <div style={{ backgroundColor: '#1b0574' }}>
+        <div style={{ backgroundColor: '#1b0574', height: '100px' }}>
+            </div>
+        <div>
+        <Hero medium bold style={{ backgroundColor: '#282a36'}}>
+            <Hero.Body>
+                <Container>
+                    <Title style={{ fontFamily: 'Dosis', color: 'darkViolet'}}>
+                       By The Numbers
+                    </Title>
+                        <SubTitle style={{ fontFamily: 'Lato', color: '#00d1b2' }}>
+                            Explore Your Favorite Coins In Detail
+                        </SubTitle>
+                </Container>
+            </Hero.Body>
+        </Hero> 
+        </div>
+            <div style={{ display: 'flex'  }}>
                 <br />
-                <div style={{ width: '50%', display: 'block', marginTop:'18vh' }}>
-                    {displayInfo()}
+                <div style={{ fontFamily: 'Lato', backgroundColor: '#282a36', width: '60%', display: 'block', marginTop:'100px'  }}>
+                    <div>
+                        {displayInfo()}
+                    </div>
                 </div>
             <CoinDetail {...state}/>
             </div>
@@ -74,6 +101,7 @@ const GraphPage = (props) => {
                 </Nav>  
             </div>
         </div>
+    </div>
     );
 }
 
