@@ -2,17 +2,13 @@ import React, { useState, useEffect } from 'react';
 import newHomeImg from './newHomeImg.png';
 import { Link } from 'react-router-dom';
 import Parallax from 'react-rellax';
-import { Button, Card, Container, Content, Control, Field, Heading, Image, Level, Nav, Section, Title } from 'reactbulma';
+import { Button, Card, Container, Content, Control, Field, Heading, Image, Level, Nav, Title } from 'reactbulma';
 import '../components.css';
 import regression from 'regression';
 import CoinMultiGraph from '../CoinMultiGraph';
 import logo from './logo.favicon.jpg';
 
 const Home = (props) => {
-    const heroImg = {
-        
-    }
-
 
     const [d, setD] = useState([])
     const [rd, setRd] = useState([])
@@ -40,7 +36,6 @@ const Home = (props) => {
         return () => clearInterval(interval);
     }, [props, d, seconds, time, rd]);
 
-
     const getGraphData = (ind) => {
         let week = Math.floor(props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_7d / 100)) * 100) / 100
         let day = Math.floor(props[ind]?.quote.USD.price * (1 - (props[ind]?.quote.USD.percent_change_24h / 100)) * 100) / 100
@@ -64,8 +59,6 @@ const Home = (props) => {
         ]
         return data
     }
-
-
     const predictFutureData = (ind) => {
         if (!props?.models[ind]?.predict) {
             return []
@@ -84,18 +77,15 @@ const Home = (props) => {
         return data.reverse()
     }
 
-
     return (
             <div style={{ height: '500px'}}>
-                <div style={{ backgroundColor: '#1b0574', height: '325px' }}>
+                <div style={{ backgroundColor: '#1b0574', height: '100px' }}>
                 </div>
                 <Card>
                     <Card.Image ratio="16by9" src={newHomeImg} alt="ironCoin Logo" />
                 </Card>
-                <div style={{ backgroundColor: '#1b0574', height: '325px' }}>
-                </div>
-                <Parallax speed={20}>
-            <div style={{ backgroundColor: '#282a36', height: '580px' }}>
+                <Parallax speed={12}>
+            <div style={{ backgroundColor: '#282a36' }}>
                 <br />
                 <div>
                     <Content>

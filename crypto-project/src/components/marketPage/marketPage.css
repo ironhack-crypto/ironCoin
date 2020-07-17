@@ -56,11 +56,3 @@ hr{
     border-bottom: 1px solid;
     
 }
-
-
-/* return <div className="articleDiv">
-<h1>{news[0].title}</h1>
-<span className="source">{news[0].source.name} {news[0].publishedAt}</span>
-<p className="description">{news[0].description}</p>
-</div>
-} */

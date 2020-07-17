@@ -29,8 +29,8 @@ class Contact extends Component{
 
     render(){
         return (
-        <div>
             <div>
+        <div>
             <div className='contDiv'>
                 <div className='contContainer'>
 
