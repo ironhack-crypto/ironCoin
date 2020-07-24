@@ -9,6 +9,6 @@ This application was developed by three young [Ironhack](https://www.ironhack.co
 
 We primarily used [npm](http://npmjs.com), [Microsoft Visual Studio](https://code.visualstudio.com), and the [Google Developer Console](https://console.developers.google.com) to render and debug the code. This was first endeavor together as a team, and we appreciated the opportunity to sharpen our skills and achieve new heights thanks to the flexibility of React. The application was deployed live on [Netlify](https://www.netlify.com) and will be maintained and updated as needed to provide an engaging experience to our users.
 
-## AT A GLANCE: Technologies Employed --
+### AT A GLANCE: Technologies Employed --
 
-React.js | Node.js | REST API | npm | Bulma CSS | json 
+### React.js | Node.js | REST API | npm | Bulma CSS | json 
