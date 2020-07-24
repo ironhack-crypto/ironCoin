@@ -1,11 +1,4 @@
 
-.marketTitle{
-    font-family: Dosis;
-    color: gainsboro;
-}
-
-
-
 .articles{
     background-color: #1b0574;
     width: 100%;
@@ -13,7 +6,6 @@
     padding-top: 50px;
     align: center;
 }
-
 
 .articleDiv{
     display: inline-block;
@@ -26,22 +18,26 @@
     text-align: left;
     
 }
+
 .source{
     font-style: italic;
     margin-top: 15px;
     float: left;
     color: #00d1b2;
 }
+
 .description{
     font-family: Lato;
     color: gainsboro;
 }
+
 .articleLink{
     float: right;
     font-weight: bold;
     font-size: 18px;
     color: #00d1b2;
 }
+
 h1{
     font-size: 25px;
     color: #00d1b2;
@@ -49,18 +45,16 @@ h1{
 
 .latest{
     position: relative;
-    
     border-bottom: none;
-    /* width: ; */
     top: 150px;
     font-size: 65px;
     z-index: 997;
-    /* border-bottom: 5px outset #00d1b2; */
 }
+
 hr{
     border: solid darkviolet 5px;
-    /* width: 80%; */
 }
+
 .arttitle{
     font-family: Dosis;
     color: #00d1b2;

@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import newHomeImg from './newHomeImg.png';
-import { Link } from 'react-router-dom';
 import Parallax from 'react-rellax';
-import { Button, Card, Container, Content, Control, Field, Heading, Image, Level, Nav, Title } from 'reactbulma';
-import Footer from './../footer/Footer.js'
-import '../components.css';
+import { Card, Content, Control, Field, Heading, Level, Title } from 'reactbulma';
+import Footer from './../footer/Footer.js';
 import regression from 'regression';
 import CoinMultiGraph from '../CoinMultiGraph';
-import logo from './logo.favicon.jpg';
 
 const Home = (props) => {
 
@@ -79,7 +76,7 @@ const Home = (props) => {
     }
 
     return (
-            <div style={{ height: '500px', marginBottom: '10px'}}>
+            <div style={{ height: '500px' }}>
                 <div style={{ backgroundColor: '#1b0574', height: '100px' }}>
                 </div>
                 <Card>
@@ -92,7 +89,7 @@ const Home = (props) => {
                     <Content>
                         <Field groupedCentered>
                             <Control>
-                                <Title is='1' style={{ fontFamily: 'Dosis', color: '#00d1b2', fontWeight: '700' }}>Crypto Trends</Title>
+                                <Title is='2' style={{ fontFamily: 'Dosis', color: '#00d1b2', fontWeight: '700' }}>Crypto Market Trends</Title>
                             </Control>
                         </Field>
                     </Content>
@@ -102,58 +99,27 @@ const Home = (props) => {
                         <Level.Item hasTextCentered>
                             <div style={{width: '100%'}}>
                                 <Heading style={{ color: 'white' }}>{props?.coins[0]?.name}</Heading>
-                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[0]?.symbol}</Title>
+                                <Title is='4' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[0]?.symbol}</Title>
                                 <CoinMultiGraph marketData={getGraphData(0)} generatedData={d} predictedData={predictFutureData(0)} />
                             </div>
                         </Level.Item>
                         <Level.Item hasTextCentered>
                             <div style={{width: '100%'}}>
                                 <Heading style={{ color: 'white' }}>{props?.coins[1]?.name}</Heading>
-                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[1]?.symbol}</Title>
+                                <Title is='4' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[1]?.symbol}</Title>
                                 <CoinMultiGraph marketData={getGraphData(1)} generatedData={d} predictedData={predictFutureData(1)} />
                             </div>
                         </Level.Item>
                         <Level.Item hasTextCentered>
                             <div style={{width: '100%'}}>
                                 <Heading style={{ color: 'white' }}>{props?.coins[2]?.name}</Heading>
-                                <Title is='3' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[2]?.symbol}</Title>
+                                <Title is='4' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[2]?.symbol}</Title>
                                 <CoinMultiGraph marketData={getGraphData(2)} generatedData={d} predictedData={predictFutureData(2)} />
                             </div>
                         </Level.Item>
                         </Level>
                     </div>
                     <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
-                    {/* <Nav hasShadow>
-                    <Container fluid>
-                        <Level>
-                            <Level.Item hasTextCentered>
-                                <Link to="/" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Reload Page</Button>
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/graph" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Graph Analysis</Button>
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/">
-                                    <Image is="32x32" src={logo} alt="" />
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/market" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Market Overview</Button>
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/contact" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused  style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>About Us</Button>
-                                </Link>
-                            </Level.Item>
-                        </Level>
-                    </Container>
-                </Nav>   */}
                 <Footer />
             </div>
         </div>

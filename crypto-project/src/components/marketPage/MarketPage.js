@@ -1,19 +1,16 @@
 import React from 'react';
-import '../components.css';
 import './marketPage.css';
 import { ExternalLink } from 'react-external-link';
-import { Container, Hero, Section, SubTitle, Title } from 'reactbulma'
-import Footer from './../footer/Footer.js'
-
+import { Container, Hero, Section, SubTitle, Title } from 'reactbulma';
+import Footer from './../footer/Footer.js';
 
 const MarketPage=(props)=>{
 
-
     const nameLengthCheck=(value)=>{
-        let arr=value.split(' ')
+        let arr=value.split(' ');
         if(value){
             if(arr.length > 8){
-                return arr.slice(0,7).join(' ')+'...'
+                return arr.slice(0,7).join(' ')+'...';
             } else{
                 return value
             }
@@ -40,20 +37,19 @@ const MarketPage=(props)=>{
         
     }    
 
-    
     return (
         <div>
             <div style={{ backgroundColor: '#1b0574' }}>
             <div style={{ backgroundColor: '#1b0574', height: '100px' }}>
                 </div>
             <div>
-            <Hero medium primary bold style={{ backgroundColor: '#00d1b2'}}>
+            <Hero medium bold style={{ backgroundColor: '#282a36'}}>
                 <Hero.Body>
                     <Container>
-                        <Title className='marketTitle'>
+                        <Title style={{ fontFamily: 'Dosis', color: '#00d1b2', borderBottom: '2px solid darkViolet' }}>
                             Market Overview
                         </Title>
-                            <SubTitle style={{ fontFamily: 'Lato', color: 'darkViolet' }}>
+                            <SubTitle style={{ fontFamily: 'Lato', color: 'gainsboro' }}>
                                 Trending News From The Crypto Space
                             </SubTitle>
                     </Container>
@@ -64,8 +60,10 @@ const MarketPage=(props)=>{
                 <Section>
                     {displayArticles()}
                 </Section>
-            <Footer />
-                </div>     
+                <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
+                <Footer />
+            </div> 
+                </div>   
             </div>
         </div>
     );

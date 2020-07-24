@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { TimelineMax } from 'gsap';
 import './Contact.css';
-import { Link } from 'react-router-dom';
-import '../components.css';
 import { ExternalLink } from 'react-external-link';
 import logo from './logo.favicon.jpg';
-import { Button, Control, Container, Field, Image, Level, Nav } from 'reactbulma';
-import { gsap } from 'gsap'
-import { CSSPlugin } from 'gsap/CSSPlugin'
-import Footer from '../footer/Footer.js'
+import { Button, Control, Container, Field, Section } from 'reactbulma';
+import { gsap } from 'gsap';
+import { CSSPlugin } from 'gsap/CSSPlugin';
+import Footer from '../footer/Footer.js';
 
 
 
@@ -31,14 +29,14 @@ class Contact extends Component{
 
     render(){
         return (
-            <div>
+    <div>
         <div>
             <div className='contDiv'>
                 <div className='contContainer'>
-
+                    <Section>
                     <div className='contIndStyle' id='name1'>
                         <h1 className='contH1'>Anthony Gutilla</h1>
-                        <p className='contP'>ABOUT: <span className='contSpan'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span></p>
+                        <p className='contP'>I am a focused individual looking to improve my skill set within the IT community. I have attended Ironhack's web development bootcamp in Miami while also earning a bachelors in IT forensics at PBSC. I work as a freelance web developer.</p>
                         <div style={{ paddingTop: '30px' }}>
                         <Field groupedCentered>
                             <Control>
@@ -54,12 +52,11 @@ class Contact extends Component{
                         </Field>
                         </div>
                     </div>
-                    
-                    
-                    
+                    </Section>
+                    <Section>
                     <div className='contIndStyle' id='name2'>
                         <h1 className='contH1'>Shane Schipper</h1>
-                        <p className='contP'>ABOUT: <span className='contSpan'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span></p>
+                        <p className='contP'>I am an undergraduate student at Virginia Tech studying Computational Modeling and Data Analytics, Mathematics, and Computer Science. My passion lies in machine learning and artificial intelligence and I strongly believe that the mastery of these fields is humanities ticket into the future.</p>
                         <div style={{ paddingTop: '30px' }}>
                         <Field groupedCentered>
                             <Control>
@@ -75,12 +72,11 @@ class Contact extends Component{
                         </Field>
                         </div>              
                     </div>
-                    
-                    
-                    
+                    </Section>
+                    <Section>
                     <div className='contIndStyle' id='name3'>
                         <h1 className='contH1'>Michael Rehnert</h1>
-                        <p className='contP'>ABOUT: <span className='contSpan'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span></p>
+                        <p className='contP'>I empower my customers, my clients, and the companies I work for to establish and secure their online interests. From web design to cloud encryption, my business is you! I desire a company culture that is driven, innovative, and respectable.</p>
                         <div style={{ paddingTop: '30px' }}>
                         <Field groupedCentered>
                             <Control>
@@ -96,47 +92,16 @@ class Contact extends Component{
                         </Field>                    
                         </div>
                     </div>
-                    
+                    </Section>  
                 </div>
+                 <Section>
+        <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
                 <Footer />
+            </div> 
+            </Section> 
             </div>
-        </div>
-        
-
-        {/* <div style={{ background: '#282a36', padding: '30px', width: '100%' }}>
-                    <Nav hasShadow>
-                    <Container fluid>
-                        <Level>
-                            <Level.Item hasTextCentered>
-                                <Link to="/" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Reload Page</Button>
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/graph" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Graph Analysis</Button>
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/">
-                                    <Image is="32x32" src={logo} alt="" />
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/market" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>Market Overview</Button>
-                                </Link>
-                            </Level.Item>
-                            <Level.Item hasTextCentered>
-                                <Link to="/contact" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
-                                    <Button info focused  style={{ width: '100%', backgroundColor: '#00d1b2', color: 'darkviolet', fontFamily: 'Dosis', fontWeight: 'bold', letterSpacing: '6px' }}>About Us</Button>
-                                </Link>
-                            </Level.Item>
-                        </Level>
-                    </Container>
-                </Nav>  
-            </div> */}
-            
+        </div> 
+          
         </div>
         
         );

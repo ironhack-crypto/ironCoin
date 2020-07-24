@@ -1,21 +1,24 @@
 .contDiv{
-    /* background-color: #1b0574; */
+    background-color: #1b0574;
     width: 100%;
-    height: 110vh;
+    position: absolute; 
+    padding-top: 50px;
+    align: center;
 }
 
 .contContainer{
-    /* position: relative; */
-    padding: 50px;
+    padding-top: 130px;
+    padding-left: 20px;
+    padding-right: 20px;
     top: 75px;
+    margin-bottom: 125px;
     display: flex; 
     justify-content: space-around;
     color: #00d1b2;
 }
 
 .contIndStyle{
-    /* border: solid 1px lightgrey; */
-    padding: 50px;
+    padding: 30px;
     background-color: #282a36;
     margin: 0 10px;
     opacity: 0;
@@ -32,10 +35,6 @@
 }
 
 .contP{
-    font-weight: bold;
-}
-
-.contSpan{
     color: white;
     font-family: Lato;
     font-weight: lighter;

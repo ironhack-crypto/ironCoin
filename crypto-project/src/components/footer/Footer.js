@@ -1,24 +1,34 @@
-import React, { Component } from 'react';
-import './footer.css'
+import React from 'react';
+import { Container, Level, Nav } from 'reactbulma';
+import { ExternalLink } from 'react-external-link';
 
-const Footer=()=>{
+const Footer = () => {
     
-
-
-
-        return (
-            <div>
-                <div className='footerContain'>
-                
-                {/* <p>Ironcoin is a group collaboration with the purpose of showing the highest priced coins and how well those coins are doing in the market. The site utilizes ‘Coin Market’ API for real time coin info. The latest news articles regarding the market are also imported using the ‘Crypto Control’ API.</p>  */}
-                <h2>Technologies: <i>React, HTML/CSS, Bulma, GSAP</i></h2>
-                <h2>APIs: <i>Coin Market, Crypto Control</i></h2>
-                <span>©2020</span>
-                </div>
-
-            </div>
-        );
-    
+    return (
+        
+            <div style={{ width: '100%', bottom: '0vh', backgroundColor: '282a36', padding: '10px 20px', borderBottom: '2px solid #00d1b2' }}>
+                <Nav hasShadow>
+                    <Container fluid>
+                        <Level>
+                            <Level.Item hasTextCentered>
+                                <p style={{ color: 'gainsboro', fontFamily: 'Lato', fontStyle: 'italic' }}>APIs --
+                                <ExternalLink href="https://coinmarketcap.com/api/"> CoinMarketCap </ExternalLink>|
+                                <ExternalLink href="https://cryptocontrol.io/en/developers/apis"> Crypto Control</ExternalLink>
+                                </p>
+                            </Level.Item>
+                            <Level.Item hasTextCentered>
+                                <p style={{ color: 'gainsboro', fontFamily: 'Lato', fontStyle: 'italic' }}>
+                                Tech Stack -- React.js | Node.js | REST API | npm | Bulma CSS | GSAP | json</p>
+                            </Level.Item>
+                            <Level.Item hasTextCentered>
+                                <p style={{ color: 'gainsboro', fontFamily: 'Lato', fontStyle: 'italic' }}>©2020 ironCoin</p>
+                            </Level.Item>
+                        </Level>
+                    </Container>
+                </Nav>
+            </div> 
+    );
 }
 
 export default Footer;
+

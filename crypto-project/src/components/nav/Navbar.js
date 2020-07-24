@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Container, Image, Level, Nav } from 'reactbulma';
 import logo from './logo.favicon.jpg';
-import '../components.css';
 import Ticker from '../Ticker';
 
 
