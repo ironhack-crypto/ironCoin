@@ -98,21 +98,21 @@ const Home = (props) => {
                     <Level>
                         <Level.Item hasTextCentered>
                             <div style={{width: '100%'}}>
-                                <Heading style={{ color: 'white' }}>{props?.coins[0]?.name}</Heading>
+                                <Heading style={{ color: 'white', paddingTop: '15px' }}>{props?.coins[0]?.name}</Heading>
                                 <Title is='4' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[0]?.symbol}</Title>
                                 <CoinMultiGraph marketData={getGraphData(0)} generatedData={d} predictedData={predictFutureData(0)} />
                             </div>
                         </Level.Item>
                         <Level.Item hasTextCentered>
                             <div style={{width: '100%'}}>
-                                <Heading style={{ color: 'white' }}>{props?.coins[1]?.name}</Heading>
+                                <Heading style={{ color: 'white', paddingTop: '15px' }}>{props?.coins[1]?.name}</Heading>
                                 <Title is='4' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[1]?.symbol}</Title>
                                 <CoinMultiGraph marketData={getGraphData(1)} generatedData={d} predictedData={predictFutureData(1)} />
                             </div>
                         </Level.Item>
                         <Level.Item hasTextCentered>
                             <div style={{width: '100%'}}>
-                                <Heading style={{ color: 'white' }}>{props?.coins[2]?.name}</Heading>
+                                <Heading style={{ color: 'white', paddingTop: '15px' }}>{props?.coins[2]?.name}</Heading>
                                 <Title is='4' style={{ fontFamily: 'Lato', color: 'darkViolet' }}>{props?.coins[2]?.symbol}</Title>
                                 <CoinMultiGraph marketData={getGraphData(2)} generatedData={d} predictedData={predictFutureData(2)} />
                             </div>

@@ -11,7 +11,7 @@ const Navbar = (props) => {
     return (
     <div style={{ width: '100%', backgroundColor: '#282a36', padding: '10px 20px' }}>
         <Nav hasShadow>
-            <Container fluid>
+            <Container fluid style={{ paddingTop: '10px' }}>
             <Level>
                 <Level.Item hasTextCentered>
                     <Link to="/" style={{ width: '70%', backgroundColor: '#00d1b2' }}>
