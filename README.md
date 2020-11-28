@@ -1,5 +1,7 @@
 # ironCoin
+
 [View App](https://ironcoin-crypto.com)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fc859a11-d8fc-436b-acda-7b6b27040679/deploy-status)](https://app.netlify.com/sites/ironcoin-crypto/deploys)
 
 ## About
 This is a React web application that displays real-time and historical data, including trending news stories, for a number of popular cryptocurrencies. We also incorporated some predictive graphs which render potential trends of the most popular coins using a built-in algorithm.
