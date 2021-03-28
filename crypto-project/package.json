@@ -11,7 +11,7 @@
     "crypto-news-api": "^2.2.2",
     "font-awesome": "^4.7.0",
     "gsap": "^3.4.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.1",
     "promise-request": "^0.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
