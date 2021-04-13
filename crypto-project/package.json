@@ -20,7 +20,7 @@
     "promise-request": "^0.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-external-link": "^1.1.1",
+    "react-external-link": "^1.2.1",
     "react-gsap": "^2.2.1",
     "react-rellax": "^1.0.3",
     "react-router-dom": "^5.2.0",
