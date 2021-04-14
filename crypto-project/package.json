@@ -18,8 +18,8 @@
     "moment": "^2.27.0",
 
     "promise-request": "^0.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-external-link": "^1.2.1",
     "react-gsap": "^2.2.1",
     "react-rellax": "^1.0.3",
