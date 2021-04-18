@@ -28,7 +28,7 @@
     "reactbulma": "^3.0.4",
     "recharts": "^1.8.5",
     "regression": "^2.0.1",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
