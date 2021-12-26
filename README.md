@@ -1,5 +1,5 @@
 # ironCoin
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fc859a11-d8fc-436b-acda-7b6b27040679/deploy-status)](https://app.netlify.com/sites/ironcoin-crypto/deploys)
+[![CodeQL](https://github.com/ironhack-crypto/ironCoin-app/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/ironhack-crypto/ironCoin-app/actions/workflows/codeql-analysis.yml)
 
 <hr />
 
