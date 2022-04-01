@@ -23,7 +23,7 @@
     "react-external-link": "^1.2.1",
     "react-gsap": "^2.3.0",
     "react-rellax": "^1.0.3",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.2.2",
     "react-scripts": "4.0.0",
     "reactbulma": "^3.0.4",
     "recharts": "^1.8.5",
