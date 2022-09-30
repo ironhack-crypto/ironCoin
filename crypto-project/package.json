@@ -26,7 +26,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "reactbulma": "^3.0.4",
-    "recharts": "^1.8.5",
+    "recharts": "^2.1.14",
     "regression": "^2.0.1",
     "request-promise": "^4.2.6"
   },
